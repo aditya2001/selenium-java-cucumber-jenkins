@@ -17,10 +17,10 @@ import utils.ConfigReader;
 public class TestRunner extends AbstractTestNGCucumberTests {
 
     @BeforeTest
-    @Parameters({"browser","env"})
-    public void beforeRun(String browser, String env) throws Throwable {
+    @Parameters({"browser"})
+    public void beforeRun(String browser) throws Throwable {
         ConfigReader.setBrowserType(browser);
-        ConfigReader.setEnv(env);
+//        ConfigReader.setEnv(env);
     }
     
     @Override

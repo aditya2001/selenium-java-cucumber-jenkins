@@ -6,10 +6,10 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.BaseDriverClass;
+//import utils.BaseDriverClass;
 
 // https://www.saucedemo.com/
-public class LoginPage extends BaseDriverClass {
+public class LoginPage {
 
 	@FindBy(xpath = "//input[@id='user-name']")
 	@CacheLookup
@@ -24,19 +24,19 @@ public class LoginPage extends BaseDriverClass {
 	private WebElement loginButton;
 
 	public LoginPage(WebDriver driver, WebDriverWait wait) {
-		super(driver, wait);
+//		super(driver, wait);
 		PageFactory.initElements(driver, this);
 	}
 
 	public void loginToSite(String username, String password) {
-		waitUntilElementVisible(usernameTextField);
+//		waitUntilElementVisible(usernameTextField);
 		usernameTextField.sendKeys(username);
 		passwordTextField.sendKeys(password);
 		loginButton.click();
 	}
 
 	public Boolean verifyOnLoginPage() {
-		waitUntilElementVisible(usernameTextField);
+//		waitUntilElementVisible(usernameTextField);
 		return usernameTextField.isDisplayed();
 	}
 }

@@ -11,7 +11,7 @@ public class DriverFactory {
     public WebDriver driver;
   //use the concept of thread local because we want to execute in parallel mode 
   //we are initializing WebDriver with help of thread local
-    public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+    public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
     
 	public WebDriver initDriver(String browser) {
 

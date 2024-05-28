@@ -1,6 +1,7 @@
 package stepdefs;
 
 
+import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -8,10 +9,10 @@ import pages.HomePage;
 import pages.LoginPage;
 
 
-import cucumber.api.DataTable;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +30,12 @@ public class LoginDefinition {
 	private HomePage homePage;
 
 	public LoginDefinition() throws Exception {
-		driver = Hooks.driver;
+		try {
+			driver = Hooks.driver;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		wait = new WebDriverWait(driver, 5);
 		loginPage = new LoginPage(driver, wait);
 		homePage = new HomePage(driver, wait);

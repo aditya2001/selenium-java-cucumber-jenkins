@@ -4,16 +4,16 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import driverfactory.DriverFactory;
 import utils.ConfigReader;
 
 public class Hooks {
 	private DriverFactory driverFactory;
     private ConfigReader configReader;
-    WebDriver driver;
+    static WebDriver driver;
     Properties prop;
 
 
