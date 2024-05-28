@@ -1,18 +1,19 @@
 package stepdefs;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import utils.ConfigReader;
 
-import java.util.Properties;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import driverfactory.DriverFactory;
+import utils.ConfigReader;
 
 public class Hooks {
 	private DriverFactory driverFactory;
     private ConfigReader configReader;
-    private WebDriver driver;
+    WebDriver driver;
     Properties prop;
 
 
