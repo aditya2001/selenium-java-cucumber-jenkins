@@ -4,6 +4,7 @@
 <suite name="Suite">
     <test thread-count="3" name="TestChrome">
         <parameter name="browser" value="chrome" />
+        <parameter name="env" value="uat" />
           <classes>
             <class name="runners.TestRunner"></class>
          </classes>

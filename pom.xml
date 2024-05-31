@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>selenium-java-cucumber</groupId>
-    <artifactId>selenium-java-cucumber</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>selenium-java-cucumber</name>
 
-    <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>selenium-java-cucumber</groupId>
+	<artifactId>selenium-java-cucumber</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>selenium-java-cucumber</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.example.com</url>
+
+	<properties>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
 		<junit.version>4.13.1</junit.version>
 		<cucumber.version>6.9.0</cucumber.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
 		<maven.surefire.version>2.22.2</maven.surefire.version>
-    </properties>
 
+	</properties>
 
-    <dependencies>
+	<dependencies>
+
 
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>6.9.0</version>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -44,14 +51,15 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
+			<version>4.21.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>4.2.2</version>
-		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>io.github.bonigarcia</groupId>-->
+		<!--			<artifactId>webdrivermanager</artifactId>-->
+		<!--			<version>5.8.0</version>-->
+		<!--			<scope>test</scope>-->
+		<!--		</dependency>-->
 
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
@@ -60,12 +68,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.14.3</version>
+			<version>7.8.0</version>
 			<scope>test</scope>
 		</dependency>
+
 
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -87,20 +97,21 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>4.1.2</version>
 		</dependency>
-
 		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-core</artifactId>
-			<version>6.9.0</version>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.8.0</version>
+			<scope>compile</scope>
 		</dependency>
 
 
-    </dependencies>
+	</dependencies>
 
-    <build>
-        <plugins>
+	<build>
+		<plugins>
 
-     <plugin>
+
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
@@ -118,9 +129,31 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+<!--					<systemPropertyVariables>-->
+<!--						<env>${env.user}</env>-->
+<!--					</systemPropertyVariables>-->
+					<!--					<includes>-->
+					<!--						<include>**/ParallelRun.java</include>-->
+					<!--					</includes>-->
+					<!--					<parallel>methods</parallel>-->
+					<!--					<threadCount>4</threadCount>-->
+					<!--					<useUnlimitedThreads>false</useUnlimitedThreads>-->
 				</configuration>
 			</plugin>
 
-        </plugins>
-    </build>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-failsafe-plugin</artifactId>
+				<version>3.0.0-M3</version> <executions> <execution> <goals> <goal>integration-test</goal>
+				</goals> <configuration> UNCOMMENT - To add any exclusions if required <excludes>
+				<exclude>**/*IT*.java</exclude> </excludes> <includes> UNCOMMENT BELOW LINE
+				- To execute feature files with a single runner <include>**/MyTestRunner.java</include>
+				UNCOMMENT BELOW LINE - To execute feature files with multiple runners <include>**/*Runner.java</include>
+				</includes> UNCOMMENT BELOW 3 LINES - To execute using parallel or combination
+				option <parallel>methods</parallel> <threadCount>4</threadCount> <perCoreThreadCount>true</perCoreThreadCount>
+				UNCOMMENT BELOW 3 LINES - To execute using forking or combination option
+				<forkCount>2</forkCount> <reuseForks>true</reuseForks> <reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory>
+				</configuration> </execution> </executions> </plugin> -->
+
+
+		</plugins>
+	</build>
 </project>

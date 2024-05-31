@@ -1,15 +1,21 @@
 package utils;
 
-import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
+
+    private Properties prop;
     private static String environment = null;
     private static String browserType = null;
-    private Properties prop;
+
+    /**
+     * This method is used to load the properties from config.properties file
+     * @return it returns Properties prop object
+     */
+
 
     public static void setBrowserType(String browser) {
         browserType = browser;
@@ -31,27 +37,21 @@ public class ConfigReader {
             throw new RuntimeException("env not specified in the testng.xml");
     }
 
-    public Properties loadProperties(String env) {
+    public Properties init_prop() {
+
         prop = new Properties();
-        BufferedReader reader;
-        if(env.equals("uat")) {
-            try {
-                reader = new BufferedReader(new FileReader("src/test/resources/config/config.properties"));
-                prop.load(reader);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
+            prop.load(ip);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        else if(env.equals("qa")){
-            try {
-                reader = new BufferedReader(new FileReader("src/test/resources/config/config.properties"));
-                prop.load(reader);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+
         return prop;
+
     }
+
 }
-
-

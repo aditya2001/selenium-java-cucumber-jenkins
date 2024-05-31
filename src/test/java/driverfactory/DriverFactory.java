@@ -1,19 +1,26 @@
 package driverfactory;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
-    public WebDriver driver;
-  //use the concept of thread local because we want to execute in parallel mode 
-  //we are initializing WebDriver with help of thread local
-    public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
-    
-	public WebDriver initDriver(String browser) {
+
+	public WebDriver driver;
+
+	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+
+	/**
+	 * This method is used to initialize the thradlocal driver on the basis of given
+	 * browser
+	 *
+	 * @param browser
+	 * @return this will return tldriver.
+	 */
+	public WebDriver init_driver(String browser) {
 
 		System.out.println("browser value is: " + browser);
 
@@ -34,9 +41,10 @@ public class DriverFactory {
 		return getDriver();
 
 	}
+
 	/**
 	 * this is used to get the driver with ThreadLocal
-	 * 
+	 *
 	 * @return
 	 */
 	public static synchronized WebDriver getDriver() {

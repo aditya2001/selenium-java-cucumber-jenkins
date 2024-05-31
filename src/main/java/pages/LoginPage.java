@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 //import utils.BaseDriverClass;
 
 // https://www.saucedemo.com/
@@ -23,7 +22,7 @@ public class LoginPage {
 	@CacheLookup
 	private WebElement loginButton;
 
-	public LoginPage(WebDriver driver, WebDriverWait wait) {
+	public LoginPage(WebDriver driver) {
 //		super(driver, wait);
 		PageFactory.initElements(driver, this);
 	}
