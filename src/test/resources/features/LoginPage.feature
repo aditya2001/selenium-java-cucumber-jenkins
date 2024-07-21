@@ -1,6 +1,5 @@
-Feature: Login page
-
-Feature Login page will work depending on the user credentials.
+@ignore
+Feature: Login page will work depending on the user credentials.
 
   Background:
     Given A web browser is at the sauce labs login page

@@ -8,6 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 //import utils.BaseDriverClass;
 
 // https://www.saucedemo.com/
+
+//we can use the page object pattern without using the Page Factory class.
+// The page object pattern simply abstracts business logic away from the physical structure of the pages.
+// And the Page Factory class gives us the ability to use annotations which automatically find the elements on the page without specifying findElement.
 public class LoginPage {
 
 	@FindBy(xpath = "//input[@id='user-name']")
