@@ -3,25 +3,25 @@ Web test automation example project using IntelliJ IDEA Community, Java, Maven, 
 
 # Features of the framework--
 
-# Parallel Testing and Parameterization-  
+#### Parallel Testing and Parameterization-
  testng.xml is a configuration file for organizing and executing test.We can provide different test suites and specify test classes to execute for parallel testing
  This significantly reduces execution time, improving overall efficiency and productivity in testing.
  testng.xml allows to run same test with different input data. Ex we can pass different browser and env values as parameters.
 
-# Organizing and grouping the test- 
+#### Organizing and grouping the test-
 We can organize test into different logical groups.Like can create different suites for running test on different browser.
 <test thread-count="3" name="TestChrome">
 <test thread-count="3" name="TestFireFox">
 
-# Integration with Jenkins- 
+#### Integration with Jenkins-
 testng.xml integrates easily with build tools like Maven and Jenkins. 
 We use maven sure fire plugin which executes testng.xml which ultimately executes runner file mentioned insides class in testng.xml.
 
-# Page Object Model-
+#### Page Object Model-
 inside src/main.java we have created page classes for every page. For using the methods of these classes we need to created objects and call those methods.
 
 
-# OOPS based-
+#### OOPS based-
 Framework supports Inheritance-
 Framework supports encapsulation
 Framework supports Polymorphism

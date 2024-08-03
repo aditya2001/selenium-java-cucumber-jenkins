@@ -10,26 +10,21 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
 public class LoginDefinition {
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private LoginPage loginPage;
 
-	private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
+	public LoginDefinition() throws Exception {
+		driver = DriverFactory.getDriver();
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		loginPage = new LoginPage(driver, wait);
 
-//	public LoginDefinition() throws Exception {
-//		try {
-//			driver = Hooks.driver;
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		wait = new WebDriverWait(driver);
-//		loginPage = new LoginPages(driver);
-//
-//	}
+	}
 
 	@Given("^A web browser is at the sauce labs login page$")
 	public void loginPage() {
