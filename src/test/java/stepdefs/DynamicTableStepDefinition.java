@@ -8,19 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.DynamicPage;
-import pages.LoginPage;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DynamicTableStepDefs {
+public class DynamicTableStepDefinition {
 	private WebDriver driver;
 	private WebDriverWait wait;
 
 	private DynamicPage dynamicPage;
 
-	public DynamicTableStepDefs() throws Exception {
+	public DynamicTableStepDefinition() throws Exception {
 		driver = DriverFactory.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		dynamicPage = new DynamicPage(driver, wait);
@@ -35,7 +34,7 @@ public class DynamicTableStepDefs {
 	}
 
 	@When("^user gets no of rows and columns from dynamic web table and validates$")
-	public void userGetsNoOfRowsAndColumnsFromDynamicWebTableAndValidates() {
+	public void userGetsNoOfRowsAndColumnsFromDynamicWebTableAndValidates() throws Exception {
 		List<String> ColumnList = dynamicPage.getColumnNames();
 
 		System.out.println("No of Columns are :" + ColumnList.size());
@@ -47,7 +46,7 @@ public class DynamicTableStepDefs {
 
 
 	@When("^user gets all the values from dynamic web table and validates$")
-	public void userGetsAllTheValuesFromDynamicWebTableAndValidates() {
+	public void userGetsAllTheValuesFromDynamicWebTableAndValidates() throws Exception {
            List<String> tableData = new ArrayList<>();
 		   tableData = dynamicPage.getWebTableData();
 		   for(String str: tableData){

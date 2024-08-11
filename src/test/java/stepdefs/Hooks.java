@@ -1,6 +1,7 @@
 package stepdefs;
 
 import driverfactory.DriverFactory;
+import org.apache.commons.io.FileUtils;
 import utils.ConfigReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -9,6 +10,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Properties;
 
 public class Hooks {
@@ -38,13 +41,17 @@ public class Hooks {
     }
 
     @After(order = 1)
-    public void tearDown(Scenario scenario) {
+    public void tearDown(Scenario scenario) throws IOException {
         if (scenario.isFailed()) {
             // take screenshot:
             String screenshotName = scenario.getName().replaceAll(" ", "_");
-            byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(sourcePath, "image/png", screenshotName);
-
+            //Use TakesScreenshot method to capture screenshot
+            TakesScreenshot screenshot = (TakesScreenshot)driver;
+            //Saving the screenshot in desired location
+            File source = screenshot.getScreenshotAs(OutputType.FILE);
+            //Saving the screenshot in desired location
+            FileUtils.copyFile(source, new File("./SeleniumScreenshots/" + screenshotName + ".png"));
+            System.out.println("Screenshot is captured");
         }
     }
 
