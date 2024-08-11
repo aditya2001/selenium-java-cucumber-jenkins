@@ -18,18 +18,24 @@ testng.xml integrates easily with build tools like Maven and Jenkins.
 We use maven sure fire plugin which executes testng.xml which ultimately executes runner file mentioned insides class in testng.xml.
 
 #### Page Object Model-
-inside src/main.java we have created page classes for every page. For using the methods of these classes we need to created objects and call those methods.
+inside src/main.java we have created page classes for every page. We have defined variables for web elements using page factory or direct element instantiation. For using the methods of these classes we need to created objects and call those methods.
+Page class will have locator to identify the elements, page specific methods and a constructor to initialize the page class variables.
 
 
 #### OOPS based-
-Framework supports Inheritance-
-Framework supports encapsulation
-Framework supports Polymorphism
-Framework supports Abstraction
+Framework supports Inheritance-- We have created a BasePage abstract class which defines the common methods for all the pages of the application like
+ getPageTitle, getWebTableCellValue, waitUntilElementVisible etc. These methods are then reused in all the page classes. This way we are achieving inheritance.
+Framework supports encapsulation-- Binding the fields and methods together. In this framework for every class we have a private driver instance and public constructor to instantiate the driver instance.
+Framework supports Polymorphism-- Polymorphism allows us to perform same task in different ways. Click, selectDropDown are the methods in the framework that show method overloading.
+Framework supports Abstraction-- We have base page abstract class, which contains abstract and non-abstract methods.
 
+#### Benefits
+1) Easy Code Maintenance- Changes to UI elements are localized within page classes, reducing test case maintenance efforts.
+2) Reusability- Page class objects are reused across multiple test cases , therefore reducing code duplication
+3) Better Readability- Test are more focussed on business logic, making them easier to understand and review.
 # Setup Project 
 Easy way-
-1) Create a empty repository on github
+1) Create an empty repository on GitHub
 2) Use git clone to clone the repository on local
 3) Create a maven project locally and copy its content to this newly cloned empty repository.
 4) Navigate to cloned repository

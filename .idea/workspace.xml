@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759ea42f-3bba-4c82-997a-cb641134a376" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefs/LoginDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefs/LoginDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DynamicPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DynamicPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefs/DynamicTableStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefs/DynamicTableStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/DynmicWebPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/DynmicWebPage.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test output/PdfReport/ExtentPdf.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/test output/PdfReport/ExtentPdf.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output-thread/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/SparkReport/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/SparkReport/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/embedded1.png" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/embedded1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

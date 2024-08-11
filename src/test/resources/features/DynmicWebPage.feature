@@ -1,3 +1,4 @@
+
 Feature: Get and assert values from dynamic web tables
 
   Background:

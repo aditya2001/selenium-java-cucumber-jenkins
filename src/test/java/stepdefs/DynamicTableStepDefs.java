@@ -8,14 +8,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.DynamicPage;
+import pages.LoginPage;
 
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DynamicTableStepDefs {
 	private WebDriver driver;
 	private WebDriverWait wait;
 
-	private DynamicPage dynamicPage = new DynamicPage(DriverFactory.getDriver());
+	private DynamicPage dynamicPage;
+
+	public DynamicTableStepDefs() throws Exception {
+		driver = DriverFactory.getDriver();
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		dynamicPage = new DynamicPage(driver, wait);
+
+	}
 
 
 	@Given("^A web browser is at Techlistic dynamic web table page$")
@@ -26,29 +36,24 @@ public class DynamicTableStepDefs {
 
 	@When("^user gets no of rows and columns from dynamic web table and validates$")
 	public void userGetsNoOfRowsAndColumnsFromDynamicWebTableAndValidates() {
-		List<WebElement> ColumnList = dynamicPage.getColumnList();
+		List<String> ColumnList = dynamicPage.getColumnNames();
+
 		System.out.println("No of Columns are :" + ColumnList.size());
 
 		//To find no of Rows, first row is heading
-		List<WebElement> RowList = dynamicPage.getRowList();
+		List<WebElement> RowList = dynamicPage.getWebTableRowCount();
 		System.out.println("No of Rows are :" + RowList.size());
 	}
 
 
 	@When("^user gets all the values from dynamic web table and validates$")
 	public void userGetsAllTheValuesFromDynamicWebTableAndValidates() {
-		List<WebElement> columnCount = dynamicPage.getColumnList();
-		List<WebElement> rowCount = dynamicPage.getRowList();
-		for (int i = 2; i <= rowCount.size(); i++) {
-			//Used for loop for number of columns.
-			for (int j = 1; j <= columnCount.size(); j++) {
-//				String finalXpath = dynamicPage.getFirstPart() + i + dynamicPage.getSecondPart() + j + dynamicPage.getThirdPart();
-				String tableData = dynamicPage.getTableData(i,j);
-				System.out.println(tableData);
-				System.out.println("---------------------------------");
-			}
+           List<String> tableData = new ArrayList<>();
+		   tableData = dynamicPage.getWebTableData();
+		   for(String str: tableData){
+			   System.out.println(str);
+		   }
 
-		}
 	}
 }
 

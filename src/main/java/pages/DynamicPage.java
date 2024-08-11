@@ -8,53 +8,50 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
+
 //import utils.BaseDriverClass;
 //https://testsigma.com/blog/page-object-model-in-selenium/
 
-public class DynamicPage {
+public class DynamicPage extends BasePage {
 	private WebDriver driver;
 	// Locator for Email Address
-	public static final String firstPart = "//*[@id='customers']/tbody/tr[";
-	public static final String secondPart = "]/td[";
-	public static final String thirdPart = "]";
+	private static final String webTableXpath = "//*[@id='customers']/tbody/tr[";
+	private static final String secondPart = "]/td[";
+	private static final String thirdPart = "]";
 
-	@FindBy(xpath = "//*[@id='customers']/tbody/tr/th")
-	@CacheLookup
-	private List<WebElement> columns;
-
-	@FindBy(xpath = "//*[@id='customers']/tbody/tr")
-	@CacheLookup
-	private List<WebElement> rows;
+	private static final String columns = "//*[@id='customers']/tbody/tr/th";
+	private static final String rows = "//*[@id='customers']/tbody/tr";
 
 
-	public DynamicPage(WebDriver driver) {
-//		super(driver, wait);
+	public DynamicPage(WebDriver driver, WebDriverWait wait) {
+		super(driver, wait);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public List<WebElement> getColumnList() {
-		return columns;
+	public List<String> getColumnNames() {
+		return getWebTableColumnNames("//*[@id='customers']");
 	}
 
-	public List<WebElement> getRowList() {
-		return rows;
+	public List<WebElement> getWebTableRowCount() {
+		return driver.findElements(By.xpath(rows));
 	}
 
-	public String getFirstPart() {
-		return firstPart;
-	}
-	public String getSecondPart() {
-		return secondPart;
-	}
-	public String getThirdPart() {
-		return thirdPart;
-	}
 
-	public String getTableData(int i, int j) {
-		String finalXpath = getFirstPart() + i + getSecondPart() + j + getThirdPart();
-		return driver.findElement(By.xpath(finalXpath)).getText();
-	  }
+	public List<String> getWebTableData() {
+		List<String> columnCount = getColumnNames();
+		List<WebElement> rowCount = getWebTableRowCount();
+		List<String> ls = new ArrayList<>();
+		for (int i = 2; i <= rowCount.size(); i++) {
+			//Used for loop for number of columns.
+			for (int j = 1; j <= columnCount.size(); j++) {
+				String data = getWebTableCellValue(webTableXpath, i, j);
+				ls.add(data);
+			}
+		}
+		return ls;
+	}
 }
 
