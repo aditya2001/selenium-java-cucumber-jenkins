@@ -23,16 +23,17 @@ Page class will have locator to identify the elements, page specific methods and
 
 
 #### OOPS based-
-Framework supports Inheritance-- We have created a BasePage abstract class which defines the common methods for all the pages of the application like
+1. Framework supports Inheritance-- We have created a BasePage abstract class which defines the common methods for all the pages of the application like
  getPageTitle, getWebTableCellValue, waitUntilElementVisible etc. These methods are then reused in all the page classes. This way we are achieving inheritance.
-Framework supports encapsulation-- Binding the fields and methods together. In this framework for every class we have a private driver instance and public constructor to instantiate the driver instance.
-Framework supports Polymorphism-- Polymorphism allows us to perform same task in different ways. Click, selectDropDown are the methods in the framework that show method overloading.
-Framework supports Abstraction-- We have base page abstract class, which contains abstract and non-abstract methods.
+2. Framework supports encapsulation-- Binding the fields and methods together. In this framework for every class we have a private driver instance and public constructor to instantiate the driver instance.
+3. Framework supports Polymorphism-- Polymorphism allows us to perform same task in different ways. Click, selectDropDown are the methods in the framework that show method overloading.
+4. Framework supports Abstraction-- We have base page abstract class, which contains abstract and non-abstract methods.
 
-#### Benefits
+#### Benefits-
 1) Easy Code Maintenance- Changes to UI elements are localized within page classes, reducing test case maintenance efforts.
 2) Reusability- Page class objects are reused across multiple test cases , therefore reducing code duplication
 3) Better Readability- Test are more focussed on business logic, making them easier to understand and review.
+
 # Setup Project 
 Easy way-
 1) Create an empty repository on GitHub
