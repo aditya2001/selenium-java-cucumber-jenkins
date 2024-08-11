@@ -1,14 +1,14 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "e66fce2c-2294-422c-9758-78b768dbb50e",
+    "id": "e3fbd943-d7d8-48e3-8006-62bc953b1f33",
     "feature": "Perform different actions on the page",
     "scenario": "1.Select drop down value",
-    "start": 1723396803835,
+    "start": 1723398013234,
     "group": 16,
     "content": "",
     "tags": "",
-    "end": 1723396811870,
+    "end": 1723398021530,
     "className": "passed"
   }
 ]);

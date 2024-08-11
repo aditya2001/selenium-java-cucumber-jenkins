@@ -3,6 +3,7 @@ package driverfactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -25,8 +26,12 @@ public class DriverFactory {
 		System.out.println("browser value is: " + browser);
 
 		if (browser.equals("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+		    options.addArguments("--headless");
 			WebDriverManager.chromedriver().setup();
-			tlDriver.set(new ChromeDriver());
+			tlDriver.set(new ChromeDriver(options));
 		} else if (browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
