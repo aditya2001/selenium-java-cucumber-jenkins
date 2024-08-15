@@ -19,7 +19,10 @@ pipeline {
         stage('Building'){
            steps {
              echo "Building the application"
-//              checkout([$class: 'GitSCM', branches: [[name: "master"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jenkins-testing', url: 'git@github.com:aditya2001/selenium-java-cucumber.git']]])
+              checkout scmGit(
+                    branches: [[name: "master"]],
+                    userRemoteConfigs: [[credentialsId: 'ssh-keys',
+                        url: 'git@github.com:aditya2001/selenium-java-cucumber.git']])
              }
           }
         stage('Testing'){
