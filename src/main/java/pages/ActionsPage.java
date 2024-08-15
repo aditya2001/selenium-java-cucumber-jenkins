@@ -1,13 +1,17 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 //import utils.BaseDriverClass;
@@ -15,12 +19,33 @@ import java.util.List;
 
 public class ActionsPage extends BasePage {
 	private WebDriver driver;
+	private String parent;
 	// Locator for Email Address
-	private static final String dropDownButton = Constants.XPATH+"~"+"//a[text()='Dropdown']";
-	private static final String selectDropDown = Constants.XPATH+"~"+"//select[@id='dropdown']";
-	private static final String rows = "//*[@id='customers']/tbody/tr";
-	private static final String columns = Constants.XPATH+"~"+"//*[@id='customers']";
 
+	@FindBy(xpath = "//a[text()='Dropdown']")
+	@CacheLookup
+	private WebElement dropDownButton;
+
+	@FindBy(xpath = "//select[@id='dropdown']")
+	@CacheLookup
+	private WebElement selectDropDown;
+
+
+	@FindBy(xpath = "//a[text()='JavaScript Alerts']")
+	@CacheLookup
+	private WebElement alertButton;
+
+	@FindBy(xpath = "//button[text()='Click for JS Confirm']")
+	@CacheLookup
+	private WebElement confirmButton;
+
+	@FindBy(xpath = "//a[text()='Entry Ad']")
+	@CacheLookup
+	private WebElement AddPopUp;
+
+	@FindBy(xpath = "//p[text()='Close']/parent::div")
+	@CacheLookup
+	private WebElement closeButton;
 
 	public ActionsPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
@@ -36,5 +61,48 @@ public class ActionsPage extends BasePage {
 		selectDropDown(selectDropDown, value);
 	}
 
+	public void clickAlertPopUp() throws Exception {
+		click(alertButton);
+	}
+
+	public void confirmAlertPopup() throws Exception {
+		click(confirmButton);
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+	}
+
+	public void clickAddPopup() throws Exception {
+		click(AddPopUp);
+	}
+
+	public void closeWindowAddPopUp() throws Exception {
+		click(closeButton);
+	}
+
+	public void clickWindowButton() {
+		driver.findElement(By.xpath("//a[text()='Multiple Windows']")).click();
+
+
+	}
+
+	public void validateNewWindow(){
+		driver.findElement(By.xpath("//a[text()='Click Here']")).click();
+		parent = driver.getWindowHandle();
+		Set<String> s = driver.getWindowHandles();
+		for (String childWindow : s) {
+			if (!parent.equals(childWindow)) {
+				driver.switchTo().window(childWindow);
+				System.out.println(driver.getTitle());
+				System.out.println(driver.getTitle());
+				System.out.println(driver.getTitle());
+				System.out.println(driver.getTitle());
+				driver.close();
+			}
+		}
+	}
+
+	public void navigateBackToMainWindow() {
+		driver.switchTo().window(parent);
+	}
 }
 

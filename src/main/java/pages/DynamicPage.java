@@ -18,9 +18,9 @@ import java.util.List;
 public class DynamicPage extends BasePage {
 	private WebDriver driver;
 	// Locator for Email Address
-	private static final String webTableXpath = Constants.XPATH+"~"+"//*[@id='customers']/tbody/tr[";
+	private static final String webTableXpath = "//*[@id='customers']/tbody/tr[";
 	private static final String rows = "//*[@id='customers']/tbody/tr";
-	private static final String columns = Constants.XPATH+"~"+"//*[@id='customers']";
+	private static final String columns = "//*[@id='customers']";
 
 
 	public DynamicPage(WebDriver driver, WebDriverWait wait) {

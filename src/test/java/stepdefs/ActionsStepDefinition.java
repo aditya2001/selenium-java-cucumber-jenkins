@@ -49,5 +49,46 @@ public class ActionsStepDefinition {
 
     @Then("validate drop value displayed")
     public void validateDropValueDisplayed() {
+
+    }
+
+    @When("user clicks on java script alert popups$")
+    public void userClicksOnJavaScriptAlertPopup() throws Exception {
+        actionsPage.clickAlertPopUp();
+    }
+
+    @And("confirm java script alert popups$")
+    public void confirmJavaScriptAlertPopup() throws Exception {
+        actionsPage.confirmAlertPopup();
+    }
+
+    @When("user clicks on Entry Add window popup")
+    public void userClicksOnEntryAddWindowPopup() throws Exception {
+         actionsPage.clickAddPopup();
+    }
+
+    @And("close window add popup")
+    public void closeWindowAddPopup() throws Exception {
+         actionsPage.closeWindowAddPopUp();
+    }
+
+    @Then("click on re-enable button")
+    public void clickOnReEnableButton() {
+    }
+
+    @When("user clicks on multiple windows button")
+    public void userClicksOnMultipleWindowsButton() {
+          actionsPage.clickWindowButton();
+
+    }
+
+    @And("user navigates to new window opened and print title")
+    public void userNavigatesToNewWindowOpenedAndPrintTitle() {
+          actionsPage.validateNewWindow();
+    }
+
+    @Then("navigate back to previous window")
+    public void navigateBackToPreviousWindow() {
+        actionsPage.navigateBackToMainWindow();
     }
 }
