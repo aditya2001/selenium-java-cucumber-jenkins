@@ -1,14 +1,14 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "69e8d4fd-8fef-4240-9aec-e33b35326ece",
+    "id": "e862241c-c915-4163-9c3e-6cac8ddaa387",
     "feature": "Perform different actions on the page",
     "scenario": "4 Click on multiple windows",
-    "start": 1723714811718,
+    "start": 1723723951045,
     "group": 16,
     "content": "",
     "tags": "",
-    "end": 1723714831010,
+    "end": 1723723959205,
     "className": "passed"
   }
 ]);

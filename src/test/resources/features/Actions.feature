@@ -23,7 +23,7 @@ Feature: Perform different actions on the page
     And close window add popup
     Then click on re-enable button
 
-  @ignore
+
   Scenario: 4 Click on multiple windows
     When user clicks on multiple windows button
     And user navigates to new window opened and print title
