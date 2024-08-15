@@ -1,3 +1,5 @@
+import groovy.json.JsonOutput
+
 pipeline {
     //The agent section specifies where the entire Pipeline, or a specific stage,
     //will execute in the Jenkins environment depending on where the agent section is placed.
@@ -8,8 +10,6 @@ pipeline {
     }
 
     options {
-        timestamps()
-        timeout(time: 20, unit: 'HOURS')
         ansiColor('xterm')
     }
 
