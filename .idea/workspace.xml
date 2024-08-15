@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="759ea42f-3bba-4c82-997a-cb641134a376" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Actions.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Actions.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/SparkReport/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/SparkReport/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
