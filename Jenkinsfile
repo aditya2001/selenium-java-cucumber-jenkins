@@ -6,7 +6,7 @@ pipeline {
     agent any
 
     triggers {
-        cron('TZ=America/New_York\n30 0 * * *')
+        cron('H/30 * * * *')
     }
 
     options {
