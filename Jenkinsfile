@@ -27,7 +27,7 @@ pipeline {
                       script {
                       properties([
                               parameters([
-                                  [$class: 'ChoiceParameter',
+                                  [$class: 'ExtendedChoiceParameterValue ',
                                       choiceType: 'PT_SINGLE_SELECT',
                                       description: 'Select the Environemnt from the Dropdown List',
                                       filterLength: 1,
