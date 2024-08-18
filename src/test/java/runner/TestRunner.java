@@ -1,4 +1,4 @@
-package runners;
+package runner;
 
 import utils.ConfigReader;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -6,6 +6,8 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
+
+
 
 @CucumberOptions(
         tags = "not @ignore",
@@ -22,11 +24,11 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
 
     @BeforeTest
-    @Parameters({"browser", "env"})
-    public void beforeRun(String browser, String env) throws Throwable {
-//       System.out.println(browser);
+    @Parameters({"browser"})
+    public void beforeRun(String browser) throws Throwable {
+        System.out.println(browser);
         ConfigReader.setBrowserType(browser);
-        ConfigReader.setEnv(env);
+
     }
 
     @Override

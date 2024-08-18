@@ -1,5 +1,15 @@
 # Test Automation with Java
 Web test automation example project using IntelliJ IDEA Community, Java, Maven, TestNG, Selenium , Cucumber and Page Object Model (POM)
+#### Test Execution-
+mvn test -DsuiteXmlFile=testng.xml
+
+mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox
+
+mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome
+
+For cross browser-
+mvn test -DsuiteXmlFile=crossbrowser-testng.xml
+
 
 # Features of the framework--
 

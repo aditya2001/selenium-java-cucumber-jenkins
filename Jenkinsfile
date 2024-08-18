@@ -15,6 +15,10 @@ pipeline {
         ansiColor('xterm')
     }
 
+    parameters {
+         choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
+    }
+
     stages {
         stage('Building'){
            steps {
@@ -26,8 +30,13 @@ pipeline {
              }
           }
         stage('Testing'){
+          when {
+              expression {
+                  return params.BROWSER == 'chrome'
+                }
+            }
           steps{
-            bat "mvn test"
+            bat "mvn test -DsuiteXmlFIle=testng.xml -Dbrowser=${params.BROWSER}"
           }
         }
         stage('Deploying'){

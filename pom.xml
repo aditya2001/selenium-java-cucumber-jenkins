@@ -127,7 +127,8 @@
 				<version>${maven.surefire.version}</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<!--suppress UnresolvedMavenProperty -->
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 <!--					<systemPropertyVariables>-->
 <!--						<env>${env.user}</env>-->
@@ -138,6 +139,10 @@
 					<!--					<parallel>methods</parallel>-->
 					<!--					<threadCount>4</threadCount>-->
 					<!--					<useUnlimitedThreads>false</useUnlimitedThreads>-->
+<!--					<properties>-->
+						<parallel>methods</parallel>
+						<useUnlimitedThreads>true</useUnlimitedThreads>
+<!--					</properties>-->
 				</configuration>
 			</plugin>
 
@@ -146,7 +151,7 @@
 				</goals> <configuration> UNCOMMENT - To add any exclusions if required <excludes>
 				<exclude>**/*IT*.java</exclude> </excludes> <includes> UNCOMMENT BELOW LINE
 				- To execute feature files with a single runner <include>**/MyTestRunner.java</include>
-				UNCOMMENT BELOW LINE - To execute feature files with multiple runners <include>**/*Runner.java</include>
+				UNCOMMENT BELOW LINE - To execute feature files with multiple runner <include>**/*Runner.java</include>
 				</includes> UNCOMMENT BELOW 3 LINES - To execute using parallel or combination
 				option <parallel>methods</parallel> <threadCount>4</threadCount> <perCoreThreadCount>true</perCoreThreadCount>
 				UNCOMMENT BELOW 3 LINES - To execute using forking or combination option
