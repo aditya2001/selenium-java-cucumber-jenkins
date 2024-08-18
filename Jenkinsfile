@@ -36,7 +36,7 @@ pipeline {
                 }
             }
           steps{
-            bat "mvn test -DsuiteXmlFIle=testng.xml -Dbrowser=${params.BROWSER}"
+            bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=${params.BROWSER}"
           }
         }
         stage('Deploying'){
