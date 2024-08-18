@@ -7,7 +7,7 @@ pipeline {
 
     triggers {
         parameterizedCron('''
-        H/5 * * * * %CROSSBROWSER=false;BROWSER=chrome;ENV=uat
+        0 8 * * * %CROSSBROWSER=false;BROWSER=chrome;ENV=uat
         ''')
     }
 
