@@ -78,14 +78,14 @@ pipeline {
                                      choiceType: 'PT_SINGLE_SELECT',
                                      description: 'Select env for testing',
                                      filterable: false,
-                                     name: 'CROSSBROWSER',
+                                     name: 'ENV',
                                      script:
                                          [$class: 'GroovyScript',
                                          fallbackScript: [
                                               classpath: [],
                                               sandbox: false,
                                               script:
-                                                 "return['Could not get the cross browser value']"
+                                                 "return['Could not get the env value']"
                                               ],
                                          script: [
                                                  classpath: [],
