@@ -1,4 +1,4 @@
-@ignore
+
 Feature: Login page will work depending on the user credentials.
 
   Background:
