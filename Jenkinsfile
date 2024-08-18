@@ -125,15 +125,31 @@ pipeline {
           }
         }
 
-        stage('Cross Browser Testing'){
+//         stage('Cross Browser Testing'){
+//            when {
+//              expression {
+//                 return params.CROSSBROWSER == 'true'
+//               }
+//              }
+//            steps{
+//               bat "mvn test -DsuiteXmlFile=crossbrowser-testng.xml -Denv=${params.ENV}"
+//            }
+//         }
+
+        stage('Cross Browser Parallel Testing'){
            when {
              expression {
                 return params.CROSSBROWSER == 'true'
-              }
-             }
-           steps{
-              bat "mvn test -DsuiteXmlFile=crossbrowser-testng.xml -Denv=${params.ENV}"
-           }
+                  }
+                }
+
+             parallel {
+                stage('chrome test') {
+                    steps {
+                         bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=${params.ENV}"
+                    }
+                }
+            }
         }
 
         stage('Deploying'){
