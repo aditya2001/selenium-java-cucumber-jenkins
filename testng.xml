@@ -4,6 +4,7 @@
 <suite name="Test Suite">
     <test name="TestChrome">
         <parameter name="browser" value="chrome" />
+        <parameter name="env" value="uat" />
           <classes>
             <class name="runner.TestRunner"></class>
          </classes>

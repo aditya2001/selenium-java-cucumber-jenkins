@@ -3,9 +3,9 @@ Web test automation example project using IntelliJ IDEA Community, Java, Maven, 
 #### Test Execution-
 mvn test -DsuiteXmlFile=testng.xml
 
-mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox
+mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox -Denv=uat
 
-mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome
+mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=uat
 
 For cross browser-
 mvn test -DsuiteXmlFile=crossbrowser-testng.xml

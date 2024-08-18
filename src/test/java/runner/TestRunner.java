@@ -24,10 +24,11 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
 
     @BeforeTest
-    @Parameters({"browser"})
-    public void beforeRun(String browser) throws Throwable {
+    @Parameters({"browser","env"})
+    public void beforeRun(String browser, String env) throws Throwable {
         System.out.println(browser);
         ConfigReader.setBrowserType(browser);
+        ConfigReader.setEnv(env);
 
     }
 
