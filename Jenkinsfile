@@ -15,13 +15,71 @@ pipeline {
         ansiColor('xterm')
     }
 
-    parameters {
-         choice(name: 'CROSSBROWSER', choices: ['false', 'true'], description: 'Cross Browser Testing')
-         choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
-         choice(name: 'ENV', choices: ['uat', 'qa', 'dev'], description: 'Pick the env against which you need to run test')
-    }
+//     parameters {
+//          choice(name: 'CROSSBROWSER', choices: ['false', 'true'], description: 'Cross Browser Testing')
+//          choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
+//          choice(name: 'ENV', choices: ['uat', 'qa', 'dev'], description: 'Pick the env against which you need to run test')
+//     }
 
     stages {
+            stage('Parameters'){
+                steps {
+                    script {
+                    properties([
+                            parameters([
+                                [$class: 'ChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the cross browser from the Dropdown List',
+                                    filterLength: 1,
+                                    filterable: false,
+                                    name: 'CROSSBROWSER',
+                                    script: [
+                                        $class: 'GroovyScript',
+                                        fallbackScript: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['Could not get the browser']"
+                                        ],
+                                        script: [
+                                            classpath: [],
+                                            sandbox: false,
+                                            script:
+                                                "return['true','false']"
+                                        ]
+                                    ]
+                                ],
+                                [$class: 'CascadeChoiceParameter',
+                                    choiceType: 'PT_SINGLE_SELECT',
+                                    description: 'Select the browser from drop down',
+                                    name: 'BROWSER',
+                                    referencedParameters: 'CROSSBROWSER',
+                                    script:
+                                        [$class: 'GroovyScript',
+                                        fallbackScript: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: "return['Could not get Environment from Env Param']"
+                                                ],
+                                        script: [
+                                                classpath: [],
+                                                sandbox: false,
+                                                script: '''
+                                                if (CROSSBROWSER.equals("true")){
+                                                    return[]
+                                                }
+                                                else if (CROSSBROWSER.equals("false")){
+                                                    return["chrome", "firefox"]
+                                                }
+                                                '''
+                                            ]
+                                    ]
+                                ]
+                            ])
+                        ])
+                    }
+                }
+            }
         stage('Building'){
            steps {
              echo "Building the application"
