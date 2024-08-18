@@ -16,6 +16,7 @@ pipeline {
     }
 
     parameters {
+         choice(name: 'CROSSBROWSER', choices: ['false', 'true'], description: 'Cross Browser Testing')
          choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
     }
 
@@ -32,7 +33,7 @@ pipeline {
         stage('Testing'){
           when {
               expression {
-                  return params.BROWSER == 'chrome'
+                  return params.CROSSBROWSER == 'false'
                 }
             }
           steps{
