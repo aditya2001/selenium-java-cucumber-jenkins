@@ -149,7 +149,12 @@ pipeline {
                          bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=${params.ENV}"
                     }
                 }
-            }
+                stage('firefox test') {
+                     steps {
+                          bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox -Denv=${params.ENV}"
+                     }
+                }
+             }
         }
 
         stage('Deploying'){
