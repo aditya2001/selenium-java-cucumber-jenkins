@@ -6,7 +6,9 @@ pipeline {
     agent any
 
     triggers {
-        cron('H/30 * * * *')
+        parameterizedCron('''
+        H/5 * * * * %CROSSBROWSER=false;BROWSER=chrome;ENV=uat
+        ''')
     }
 
     options {
