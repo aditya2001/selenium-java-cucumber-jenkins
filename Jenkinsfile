@@ -30,7 +30,6 @@ pipeline {
                                   [$class: 'ChoiceParameter',
                                       choiceType: 'PT_SINGLE_SELECT',
                                       description: 'Select cross browser for testing',
-                                      filterLength: 1,
                                       filterable: false,
                                       name: 'CROSSBROWSER',
                                       script: [
@@ -45,7 +44,7 @@ pipeline {
                                               classpath: [],
                                               sandbox: false,
                                               script:
-                                                  "return['true','false']"
+                                                  "return['false','true']"
                                           ]
                                       ]
                                   ],
@@ -66,14 +65,35 @@ pipeline {
                                                   sandbox: false,
                                                   script: '''
                                                   if (CROSSBROWSER.equals("true")){
-                                                      return[]
+                                                      return["All"]
                                                   }
                                                   else if(CROSSBROWSER.equals("false")){
                                                       return["chrome", "firefox"]
                                                   }
-                                                  '''
-                                              ]
-                                      ]
+                                                   '''
+                                                  ]
+                                          ]
+                                  ],
+                                  [$class: 'ChoiceParameter',
+                                     choiceType: 'PT_SINGLE_SELECT',
+                                     description: 'Select env for testing',
+                                     filterable: false,
+                                     name: 'CROSSBROWSER',
+                                     script:
+                                         [$class: 'GroovyScript',
+                                         fallbackScript: [
+                                              classpath: [],
+                                              sandbox: false,
+                                              script:
+                                                 "return['Could not get the cross browser value']"
+                                              ],
+                                         script: [
+                                                 classpath: [],
+                                                 sandbox: false,
+                                                 script:
+                                                 "return['uat','int']"
+                                                 ]
+                                         ]
                                   ]
 
 
