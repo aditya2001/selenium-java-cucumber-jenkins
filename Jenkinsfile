@@ -111,18 +111,19 @@ pipeline {
 //                         url: 'git@github.com:aditya2001/selenium-java-cucumber.git']])
              }
           }
-        stage('CrossBrowser Testing'){
+        stage('Testing on single browser'){
           when {
               expression {
                   return params.CROSSBROWSER == 'false'
                 }
             }
           steps{
+            echo "Testing on ${params.BROWSER}"
             bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=${params.BROWSER} -Denv=${params.ENV}"
           }
         }
 
-        stage('Testing'){
+        stage('Cross Browser Testing'){
            when {
              expression {
                 return params.CROSSBROWSER == 'true'
