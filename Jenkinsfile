@@ -145,11 +145,13 @@ pipeline {
 
              parallel {
                 stage('chrome test') {
+                   agent any
                     steps {
                          bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=${params.ENV}"
                     }
                 }
                 stage('firefox test') {
+                    agent any
                      steps {
                           bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox -Denv=${params.ENV}"
                      }
