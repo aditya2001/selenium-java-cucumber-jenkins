@@ -126,39 +126,39 @@ pipeline {
           }
         }
 
-//         stage('Cross Browser Testing'){
-//            when {
-//              expression {
-//                 return params.CROSSBROWSER == 'true'
-//               }
-//              }
-//            steps{
-//               bat "mvn test -DsuiteXmlFile=crossbrowser-testng.xml -Denv=${params.ENV}"
-//            }
-//         }
-
-        stage('Cross Browser Parallel Testing'){
+        stage('Cross Browser Testing'){
            when {
              expression {
                 return params.CROSSBROWSER == 'true'
-                  }
-                }
-
-             parallel {
-                stage('chrome test') {
-                   agent any
-                    steps {
-                         bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=${params.ENV}"
-                    }
-                }
-                stage('firefox test') {
-                    agent any
-                     steps {
-                          bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox -Denv=${params.ENV}"
-                     }
-                }
+              }
              }
+           steps{
+              bat "mvn test -DsuiteXmlFile=crossbrowser-testng.xml -Denv=${params.ENV}"
+           }
         }
+
+//         stage('Cross Browser Parallel Testing'){
+//            when {
+//              expression {
+//                 return params.CROSSBROWSER == 'true'
+//                   }
+//                 }
+//
+//              parallel {
+//                 stage('chrome test') {
+//                    agent any
+//                     steps {
+//                          bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=${params.ENV}"
+//                     }
+//                 }
+//                 stage('firefox test') {
+//                     agent any
+//                      steps {
+//                           bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox -Denv=${params.ENV}"
+//                      }
+//                 }
+//              }
+//         }
 
         stage('Deploying'){
         steps{
@@ -170,7 +170,7 @@ pipeline {
         post {
              always {
                  archiveArtifacts artifacts: "test output/PdfReport/ExtentPdf.pdf, target/surefire-reports/emailable-report.html", onlyIfSuccessful: false
-                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'test output/PdfReport', reportFiles: 'ExtentPdf.pdf', reportName: 'PDF Report', reportTitles: ''])
+                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/surefire-reports/', reportFiles: 'emailable-report.html', reportName: 'HTML Report', reportTitles: ''])
              }
          }
  }
