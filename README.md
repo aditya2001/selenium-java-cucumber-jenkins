@@ -1,6 +1,6 @@
 # Test Automation with Java
 Web test automation example project using IntelliJ IDEA Community, Java, Maven, TestNG, Selenium , Cucumber and Page Object Model (POM)
-#### Test Execution-
+### Test Execution - Command line
 mvn test -DsuiteXmlFile=testng.xml
 
 mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox -Denv=uat
@@ -10,6 +10,18 @@ mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=uat
 For cross browser-
 mvn test -DsuiteXmlFile=crossbrowser-testng.xml
 
+### Parallel Execution- 
+Parallel testing in Cucumber is the ability to execute Cucumber scenarios in parallel, allowing multiple scenarios to run simultaneously and speeding up the overall test execution time.
+
+#### 1. ThreadLocal WebDriver in parallel testing - 
+We use ThreadLocal class to create a ThreadLocal WebDriver variable.Each thread running a Cucumber scenario or step can have its own WebDriver instance, isolated from other threads.
+This approach ensures thread safety and prevents conflicts when executing scenarios in parallel.
+
+#### 2. Create a testng.xml and pass parallel attribute =true
+Create a testng.xml file and give parallel=true and thread-count
+
+#### 3. runner file
+Override the DataProvider annotation with parallel=true in CucumberRunnerTest that extends AbstractTestNGCucumberTests class.
 
 # Features of the framework--
 

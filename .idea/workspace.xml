@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759ea42f-3bba-4c82-997a-cb641134a376" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Actions.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Actions.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test output/PdfReport/ExtentPdf.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output-thread/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/SparkReport/Index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,27 +38,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../generate-ssh-keys-for-github" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/adity/workspace/selenium-java-cucumber&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\adity\workspace\selenium-java-cucumber" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\test\resources\features" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\main\java\pages" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\test\java\stepdefs" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\test\resources" />
-      <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="runners" />
       <recent name="pages" />
       <recent name="stepdefs" />
-      <recent name="runners" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestRunner">
+  <component name="RunManager" selected="TestNG.C:/Users/adity/workspace/selenium-java-cucumber/parallel-testng.xml">
     <configuration name="Feature: DynmicWebPage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/DynmicWebPage.feature" />
@@ -91,6 +98,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/Users/adity/workspace/selenium-java-cucumber/parallel-testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="selenium-java-cucumber" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/parallel-testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/adity/workspace/selenium-java-cucumber/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="selenium-java-cucumber" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -105,12 +122,12 @@
       <module name="selenium-java-cucumber" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="runners.*" />
+          <option name="PATTERN" value="runner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="runners" />
-      <option name="MAIN_CLASS_NAME" value="runners.TestRunner" />
+      <option name="MAIN_CLASS_NAME" value="runner.TestRunner" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -120,7 +137,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.C:/Users/adity/workspace/selenium-java-cucumber/parallel-testng.xml" />
         <item itemvalue="Cucumber Java.Feature: DynmicWebPage" />
         <item itemvalue="TestNG.C:/Users/adity/workspace/selenium-java-cucumber/testng.xml" />
         <item itemvalue="Cucumber Java.Feature: LoginPage" />
@@ -148,7 +165,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

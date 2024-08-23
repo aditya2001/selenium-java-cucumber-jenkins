@@ -17,7 +17,7 @@ Feature: Perform different actions on the page
     When user clicks on java script alert popups
     And confirm java script alert popups
 
-  @ignore
+
   Scenario: 3 Close windows add popup
     When user clicks on Entry Add window popup
     And close window add popup
