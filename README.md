@@ -25,7 +25,9 @@ Override the DataProvider annotation with parallel=true in CucumberRunnerTest th
 
 ### Jenkins Integration-
 I have created Jenkinsfile using declarative pipeline syntax, where we have to option to select browser and env where we want to run our test.
+We can also select CROSSBROWSER as true to run test on multiple browsers, by default it will run with cross browser as false.
 ![img.png](img.png)
+![img_1.png](img_1.png)
 
 # Features of the framework--
 
