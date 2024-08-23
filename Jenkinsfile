@@ -23,6 +23,7 @@ pipeline {
 //          choice(name: 'ENV', choices: ['uat', 'qa', 'dev'], description: 'Pick the env against which you need to run test')
 //     }
 
+
     stages {
        stage('Parameters'){
                   steps {
