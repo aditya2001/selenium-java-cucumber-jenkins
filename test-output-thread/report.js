@@ -1,36 +1,36 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "53f70091-75b1-41b0-ab0e-04532624a4a6",
-    "feature": "Login page will work depending on the user credentials.",
-    "scenario": "Incorrect Username Login",
-    "start": 1724428155509,
-    "group": 19,
-    "content": "",
-    "tags": "",
-    "end": 1724428160045,
-    "className": "passed"
-  },
-  {
-    "id": "d3180d38-b1d0-4c20-a761-67b67791f0a7",
-    "feature": "Perform different actions on the page",
-    "scenario": "3 Close windows add popup",
-    "start": 1724428155509,
-    "group": 17,
-    "content": "",
-    "tags": "",
-    "end": 1724428163656,
-    "className": "passed"
-  },
-  {
-    "id": "c21f3caf-61ca-4876-9931-b04d662b7ada",
+    "id": "f8314a4c-6fdc-40e7-8e4b-e3ec4323f57b",
     "feature": "Perform different actions on the page",
     "scenario": "4 Click on multiple windows",
-    "start": 1724428155506,
+    "start": 1724433356964,
     "group": 18,
     "content": "",
     "tags": "",
-    "end": 1724428164452,
+    "end": 1724433367280,
+    "className": "passed"
+  },
+  {
+    "id": "f0621efc-1255-4160-990f-ecfe8231be4f",
+    "feature": "Login page will work depending on the user credentials.",
+    "scenario": "Incorrect Username Login",
+    "start": 1724433356965,
+    "group": 19,
+    "content": "",
+    "tags": "",
+    "end": 1724433364059,
+    "className": "passed"
+  },
+  {
+    "id": "af5f09ee-121c-472d-ad59-d8a676c07660",
+    "feature": "Perform different actions on the page",
+    "scenario": "3 Close windows add popup",
+    "start": 1724433356966,
+    "group": 17,
+    "content": "",
+    "tags": "",
+    "end": 1724433367311,
     "className": "passed"
   }
 ]);
