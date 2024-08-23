@@ -205,4 +205,3 @@ pipeline {
 
  }
 
-C:\Users\adity\workspace\selenium-java-cucumber\target\surefire-reports
