@@ -123,21 +123,6 @@ pipeline {
             echo "Testing on ${params.BROWSER}"
             bat "mvn test -DsuiteXmlFile=testng.xml -Dbrowser=${params.BROWSER} -Denv=${params.ENV}"
           }
-
-
-
-
-          post {
-            always {
-              archiveArtifacts artifacts: "test output/PdfReport/ExtentPdf.pdf", onlyIfSuccessful: false
-              publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'test output/PdfReport', reportFiles: 'ExtentPdf.pdf', reportName: 'PDF Report', reportTitles: ''])
-            }
-          }
-
-
-
-
-
         }
 
 //         stage('Cross Browser Testing'){
@@ -155,8 +140,8 @@ pipeline {
            when {
              expression {
                 return params.CROSSBROWSER == 'true'
-             }
-           }
+                  }
+                }
 
              parallel {
                 stage('chrome test') {
@@ -172,19 +157,6 @@ pipeline {
                      }
                 }
              }
-
-
-                     post {
-                       always {
-                         archiveArtifacts artifacts: "target/surefire-reports/emailable-report.html", onlyIfSuccessful: false
-                         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/surefire-reports', reportFiles: 'emailable-report.html', reportName: 'HTML Report', reportTitles: ''])
-                       }
-                     }
-
-
-
-
-
         }
 
         stage('Deploying'){
@@ -194,14 +166,11 @@ pipeline {
       }
      }
 
-//         post {
-//              always {
-//                  archiveArtifacts artifacts: "test output/PdfReport/ExtentPdf.pdf", onlyIfSuccessful: false
-//                  publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'test output/PdfReport', reportFiles: 'ExtentPdf.pdf', reportName: 'PDF Report', reportTitles: ''])
-//              }
-//         }
-
-
-
+        post {
+             always {
+                 archiveArtifacts artifacts: "test output/PdfReport/ExtentPdf.pdf", onlyIfSuccessful: false
+                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'test output/PdfReport', reportFiles: 'ExtentPdf.pdf', reportName: 'PDF Report', reportTitles: ''])
+             }
+         }
  }
 
