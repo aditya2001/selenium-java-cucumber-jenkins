@@ -23,6 +23,10 @@ Create a testng.xml file and give parallel=true and thread-count
 #### 3. runner file
 Override the DataProvider annotation with parallel=true in CucumberRunnerTest that extends AbstractTestNGCucumberTests class.
 
+### Jenkins Integration-
+I have created Jenkinsfile using declarative pipeline syntax, where we have to option to select browser and env where we want to run our test.
+![img.png](img.png)
+
 # Features of the framework--
 
 #### Parallel Testing and Parameterization-
