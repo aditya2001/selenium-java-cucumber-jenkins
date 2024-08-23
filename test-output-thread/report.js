@@ -1,50 +1,50 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "347452f3-d431-4f46-b511-219aa497d6c5",
-    "feature": "Perform different actions on the page",
-    "scenario": "3 Close windows add popup",
-    "start": 1723988561916,
-    "group": 75,
-    "content": "",
-    "tags": "",
-    "end": 1723988580929,
-    "className": "passed"
-  },
-  {
-    "id": "8d4c5438-3ffa-4e47-8731-27430ea4006b",
+    "id": "53f70091-75b1-41b0-ab0e-04532624a4a6",
     "feature": "Login page will work depending on the user credentials.",
     "scenario": "Incorrect Username Login",
-    "start": 1723988561895,
-    "group": 77,
+    "start": 1724428155509,
+    "group": 19,
     "content": "",
     "tags": "",
-    "end": 1723988580800,
+    "end": 1724428160045,
     "className": "passed"
   },
   {
-    "id": "ce14f301-a538-4ea1-a1fa-fed7ac16518a",
+    "id": "d3180d38-b1d0-4c20-a761-67b67791f0a7",
     "feature": "Perform different actions on the page",
-    "scenario": "4 Click on multiple windows",
-    "start": 1723988561877,
-    "group": 76,
+    "scenario": "3 Close windows add popup",
+    "start": 1724428155509,
+    "group": 17,
     "content": "",
     "tags": "",
-    "end": 1723988582040,
+    "end": 1724428163656,
+    "className": "passed"
+  },
+  {
+    "id": "c21f3caf-61ca-4876-9931-b04d662b7ada",
+    "feature": "Perform different actions on the page",
+    "scenario": "4 Click on multiple windows",
+    "start": 1724428155506,
+    "group": 18,
+    "content": "",
+    "tags": "",
+    "end": 1724428164452,
     "className": "passed"
   }
 ]);
 CucumberHTML.timelineGroups.pushArray([
   {
-    "id": 75,
+    "id": 17,
     "content": "Thread[TestNG-PoolService-0,5,main]"
   },
   {
-    "id": 76,
+    "id": 18,
     "content": "Thread[TestNG-PoolService-1,5,main]"
   },
   {
-    "id": 77,
+    "id": 19,
     "content": "Thread[TestNG-PoolService-2,5,main]"
   }
 ]);

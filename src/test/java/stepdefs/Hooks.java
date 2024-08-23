@@ -28,15 +28,16 @@ public class Hooks {
     }
 
     @Before(order = 1)
-    public void launchBrowser() {
+    public void initializeDriver() {
         String browser = ConfigReader.getBrowserType();
         driverFactory = new DriverFactory();
-        driver = driverFactory.init_driver(browser);
+        driver = driverFactory.setDriver(browser);
 
     }
 
     @After(order = 0)
     public void quitBrowser() {
+
         driver.quit();
     }
 
