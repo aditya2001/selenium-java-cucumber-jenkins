@@ -169,7 +169,7 @@ pipeline {
 
         post {
              always {
-                 archiveArtifacts artifacts: "test output/PdfReport/ExtentPdf.pdf", "target/surefire-reports/emailable-report.html", onlyIfSuccessful: false
+                 archiveArtifacts artifacts: "test output/PdfReport/ExtentPdf.pdf, target/surefire-reports/emailable-report.html", onlyIfSuccessful: false
                  publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'test output/PdfReport', reportFiles: 'ExtentPdf.pdf', reportName: 'PDF Report', reportTitles: ''], [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/surefire-reports', reportFiles: 'emailable-report.html', reportName: 'HTML Report', reportTitles: ''])
              }
          }
