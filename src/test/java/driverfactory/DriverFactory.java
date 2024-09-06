@@ -1,5 +1,6 @@
 package driverfactory;
 
+import drivermanager.DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,12 +9,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
+import static drivermanager.DriverManager.getDriver;
 
-public class DriverFactory {
 
-	public WebDriver driver;
+public final class DriverFactory {
+	private DriverFactory(){
 
-	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+	}
+
 
 	/**
 	 * This method is used to initialize the thradlocal driver on the basis of given
@@ -22,7 +25,7 @@ public class DriverFactory {
 	 * @param browser
 	 * @return this will return tldriver.
 	 */
-	public WebDriver setDriver(String browser) {
+	public static void initDriver(String browser) {
 
 		System.out.println("browser value is: " + browser);
 
@@ -32,30 +35,21 @@ public class DriverFactory {
 			options.addArguments("--disable-dev-shm-usage");
 		    options.addArguments("--headless");
 			WebDriverManager.chromedriver().setup();
-			tlDriver.set(new ChromeDriver(options));
+			DriverManager.setDriver(new ChromeDriver(options));
 		} else if (browser.equals("firefox")) {
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("-headless");
 			WebDriverManager.firefoxdriver().setup();
-			tlDriver.set(new FirefoxDriver(options));
+			DriverManager.setDriver(new FirefoxDriver(options));
 		} else if (browser.equals("safari")) {
-			tlDriver.set(new SafariDriver());
+			DriverManager.setDriver(new SafariDriver());
 		} else {
 			System.out.println("Please pass the correct browser value: " + browser);
 		}
 
-		getDriver().manage().deleteAllCookies();
-		getDriver().manage().window().maximize();
-		return getDriver();
+		DriverManager.getDriver().manage().deleteAllCookies();
+		DriverManager.getDriver().manage().window().maximize();
 
 	}
 
-	/**
-	 * this is used to get the driver with ThreadLocal
-	 *
-	 * @return
-	 */
-	public static synchronized WebDriver getDriver() {
-		return tlDriver.get();
-	}
 }

@@ -2,6 +2,7 @@ package stepdefs;
 
 
 import driverfactory.DriverFactory;
+import drivermanager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +21,7 @@ public class DynamicTableStepDefinition {
 	private DynamicPage dynamicPage;
 
 	public DynamicTableStepDefinition() throws Exception {
-		driver = DriverFactory.getDriver();
+		driver = DriverManager.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		dynamicPage = new DynamicPage(driver, wait);
 
@@ -29,7 +30,7 @@ public class DynamicTableStepDefinition {
 
 	@Given("^A web browser is at Techlistic dynamic web table page$")
 	public void AWebBrowserIsAtTechlisticDynamicWebTablePages() {
-		DriverFactory.getDriver()
+		DriverManager.getDriver()
 				.get("https://www.techlistic.com/2017/02/automate-demo-web-table-with-selenium.html");
 	}
 

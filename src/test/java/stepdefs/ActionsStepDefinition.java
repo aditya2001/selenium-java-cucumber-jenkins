@@ -1,6 +1,7 @@
 package stepdefs;
 
 import driverfactory.DriverFactory;
+import drivermanager.DriverManager;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -23,14 +24,14 @@ public class ActionsStepDefinition {
     private ActionsPage actionsPage;
 
     public ActionsStepDefinition() throws Exception {
-        driver = DriverFactory.getDriver();
+        driver = DriverManager.getDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actionsPage = new ActionsPage(driver, wait);
 
     }
     @Given("^A web browser is at heroku app$")
     public void loginPage() {
-        DriverFactory.getDriver().get("https://the-internet.herokuapp.com/");
+        DriverManager.getDriver().get("https://the-internet.herokuapp.com/");
     }
 
     @When("user clicks on drop down button$")

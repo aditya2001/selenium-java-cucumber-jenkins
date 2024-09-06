@@ -1,14 +1,16 @@
 package stepdefs;
 
 import driverfactory.DriverFactory;
+import drivermanager.DriverManager;
+import enums.ConfigProperties;
 import org.apache.commons.io.FileUtils;
-import utils.ConfigReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import utils.PropertyUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,27 +20,19 @@ public class Hooks {
 
     private DriverFactory driverFactory;
     private WebDriver driver;
-    private ConfigReader configReader;
-    Properties prop;
 
     @Before(order = 0)
-    public void getProperty() {
-        configReader = new ConfigReader();
-        prop = configReader.init_prop();
-    }
-
-    @Before(order = 1)
     public void initializeDriver() {
-        String browser = ConfigReader.getBrowserType();
-        driverFactory = new DriverFactory();
-        driver = driverFactory.setDriver(browser);
+        String browser = PropertyUtils.getBrowserType();
+        DriverFactory.initDriver(browser);
 
     }
 
     @After(order = 0)
     public void quitBrowser() {
-
+        driver = DriverManager.getDriver();
         driver.quit();
+        DriverManager.unload();
     }
 
     @After(order = 1)

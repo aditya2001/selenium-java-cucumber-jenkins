@@ -1,6 +1,8 @@
 package stepdefs;
 
 
+import drivermanager.DriverManager;
+import enums.ConfigProperties;
 import pages.LoginPage;
 import driverfactory.DriverFactory;
 import io.cucumber.datatable.DataTable;
@@ -9,6 +11,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.PropertyUtils;
 
 import java.time.Duration;
 import java.util.List;
@@ -20,7 +23,7 @@ public class LoginDefinition {
 	private LoginPage loginPage;
 
 	public LoginDefinition() throws Exception {
-		driver = DriverFactory.getDriver();
+		driver = DriverManager.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		loginPage = new LoginPage(driver, wait);
 
@@ -28,8 +31,10 @@ public class LoginDefinition {
 
 	@Given("^A web browser is at the sauce labs login page$")
 	public void loginPage() {
-		DriverFactory.getDriver()
-				.get("https://www.saucedemo.com/");
+//		if(ConfigReader.getProp().get("uatUrl").equals('uat')){
+		driver.get(PropertyUtils.get(ConfigProperties.URL));
+//		}
+
 		Assert.assertTrue(loginPage.verifyOnLoginPage());
 	}
 
