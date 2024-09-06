@@ -1,17 +1,14 @@
 package stepdefs;
 
-import driverfactory.DriverFactory;
 import drivermanager.DriverManager;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.ActionsPage;
-import pages.DynamicPage;
 
 import java.time.Duration;
 import java.util.List;

@@ -6,7 +6,6 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
-import utils.PropertyUtils;
 
 
 @CucumberOptions(

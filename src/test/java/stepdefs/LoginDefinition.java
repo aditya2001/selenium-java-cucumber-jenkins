@@ -4,7 +4,6 @@ package stepdefs;
 import drivermanager.DriverManager;
 import enums.ConfigProperties;
 import pages.LoginPage;
-import driverfactory.DriverFactory;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;

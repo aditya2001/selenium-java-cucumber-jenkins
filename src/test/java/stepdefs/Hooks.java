@@ -2,7 +2,6 @@ package stepdefs;
 
 import driverfactory.DriverFactory;
 import drivermanager.DriverManager;
-import enums.ConfigProperties;
 import org.apache.commons.io.FileUtils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -14,7 +13,6 @@ import utils.PropertyUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Properties;
 
 public class Hooks {
 

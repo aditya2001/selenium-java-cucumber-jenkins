@@ -1,7 +1,6 @@
 package stepdefs;
 
 
-import driverfactory.DriverFactory;
 import drivermanager.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
