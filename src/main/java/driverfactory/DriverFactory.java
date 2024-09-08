@@ -2,6 +2,7 @@ package driverfactory;
 
 import drivermanager.DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,7 +23,7 @@ public final class DriverFactory {
 	 * @param browser
 	 * @return this will return tldriver.
 	 */
-	public static void initDriver(String browser) {
+	public static WebDriver initDriver(String browser) {
 
 		System.out.println("browser value is: " + browser);
 
@@ -46,7 +47,7 @@ public final class DriverFactory {
 
 		DriverManager.getDriver().manage().deleteAllCookies();
 		DriverManager.getDriver().manage().window().maximize();
-
+        return DriverManager.getDriver();
 	}
 
 }

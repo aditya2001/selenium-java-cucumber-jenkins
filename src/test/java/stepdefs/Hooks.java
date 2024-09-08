@@ -22,13 +22,12 @@ public class Hooks {
     @Before(order = 0)
     public void initializeDriver() {
         String browser = PropertyUtils.getBrowserType();
-        DriverFactory.initDriver(browser);
+        driver = DriverFactory.initDriver(browser);
 
     }
 
     @After(order = 0)
     public void quitBrowser() {
-        driver = DriverManager.getDriver();
         driver.quit();
         DriverManager.unload();
     }
