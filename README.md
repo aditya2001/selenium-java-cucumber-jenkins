@@ -1,4 +1,4 @@
-# Test Automation with Java
+# Test Automation with Java and Selenium
 Web test automation example project using IntelliJ IDEA Community, Java, Maven, TestNG, Selenium , Cucumber and Page Object Model (POM)
 This Project is bui
 ### Test Execution - Command line
