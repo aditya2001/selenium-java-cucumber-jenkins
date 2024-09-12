@@ -31,7 +31,7 @@ public final class DriverFactory {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
-		    options.addArguments("--headless");
+//		    options.addArguments("--headless");
 			WebDriverManager.chromedriver().setup();
 			DriverManager.setDriver(new ChromeDriver(options));
 		} else if (browser.equals("firefox")) {
@@ -45,9 +45,9 @@ public final class DriverFactory {
 			System.out.println("Please pass the correct browser value: " + browser);
 		}
 
-		DriverManager.getDriver().manage().deleteAllCookies();
-		DriverManager.getDriver().manage().window().maximize();
-        return DriverManager.getDriver();
+		DriverManager.getInstance().manage().deleteAllCookies();
+		DriverManager.getInstance().manage().window().maximize();
+        return DriverManager.getInstance();
 	}
 
 }

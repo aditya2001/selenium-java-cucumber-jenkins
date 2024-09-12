@@ -21,14 +21,14 @@ public class ActionsStepDefinition {
     private ActionsPage actionsPage;
 
     public ActionsStepDefinition() throws Exception {
-        driver = DriverManager.getDriver();
+        driver = DriverManager.getInstance();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         actionsPage = new ActionsPage(driver, wait);
 
     }
     @Given("^A web browser is at heroku app$")
     public void loginPage() {
-        DriverManager.getDriver().get("https://the-internet.herokuapp.com/");
+        DriverManager.getInstance().get("https://the-internet.herokuapp.com/");
     }
 
     @When("user clicks on drop down button$")

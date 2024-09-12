@@ -20,7 +20,7 @@ public class DynamicTableStepDefinition {
 	private DynamicPage dynamicPage;
 
 	public DynamicTableStepDefinition() throws Exception {
-		driver = DriverManager.getDriver();
+		driver = DriverManager.getInstance();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		dynamicPage = new DynamicPage(driver, wait);
 
@@ -29,7 +29,7 @@ public class DynamicTableStepDefinition {
 
 	@Given("^A web browser is at Techlistic dynamic web table page$")
 	public void AWebBrowserIsAtTechlisticDynamicWebTablePages() {
-		DriverManager.getDriver()
+		DriverManager.getInstance()
 				.get("https://www.techlistic.com/2017/02/automate-demo-web-table-with-selenium.html");
 	}
 

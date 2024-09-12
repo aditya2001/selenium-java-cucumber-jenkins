@@ -22,7 +22,7 @@ public class LoginDefinition {
 	private LoginPage loginPage;
 
 	public LoginDefinition() throws Exception {
-		driver = DriverManager.getDriver();
+		driver = DriverManager.getInstance();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		loginPage = new LoginPage(driver, wait);
 
