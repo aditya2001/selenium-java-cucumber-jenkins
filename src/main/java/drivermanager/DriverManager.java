@@ -16,7 +16,7 @@ public final class DriverManager {
 
     public static synchronized WebDriver getInstance() {
         if (tldriver.get() == null) {
-            tldriver = new ThreadLocal<>();
+            throw new RuntimeException("Exception occurred in getting webdriver instance");
         }
         return tldriver.get();
     }
