@@ -1,9 +1,11 @@
 # Test Automation with Java and Selenium
-This Web test automation project is developed using ->
+This web test automation framework is built using Selenium with Java and Cucumber. I have used BDD framework to write our feature file using Jherkin language.
+I have used page object model for reusability and easy maintenance. I have used Maven for build and maintain all project dependencies and plugins.
+
 1. IntelliJ IDEA Community 
 2. Programming Language -> Java 
-3. Build automation tool -> Maven
-4. Test Automation Library - Selenium 
+3. Build Tool -> Maven
+4. Web Test Automation Tool - Selenium 
 5. Test Framework -> Cucumber and TestNG
 6. Design Pattern -> Page Object Model (POM)
 
@@ -17,18 +19,30 @@ mvn test -DsuiteXmlFile=testng.xml -Dbrowser=chrome -Denv=uat
 For cross browser-
 mvn test -DsuiteXmlFile=crossbrowser-testng.xml
 
-### Parallel Execution- 
+### Parallel Execution in Cucumber - 
 Parallel testing in Cucumber is the ability to execute Cucumber scenarios in parallel, allowing multiple scenarios to run simultaneously and speeding up the overall test execution time.
 
-#### 1. ThreadLocal WebDriver in parallel testing - 
-We use ThreadLocal class to create a ThreadLocal WebDriver variable.Each thread running a Cucumber scenario or step can have its own WebDriver instance, isolated from other threads.
+#### 1. Create ThreadLocal variable in DriverManager class - 
+We use ThreadLocal class to create a ThreadLocal variable of type WebDriver.Each thread running a Cucumber scenario or step can have its own WebDriver instance, isolated from other threads.
 This approach ensures thread safety and prevents conflicts when executing scenarios in parallel.
 
-#### 2. Create a testng.xml and pass parallel attribute =true
-Create a testng.xml file and give parallel=true and thread-count
+private static ThreadLocal<WebDriver> tldriver = new ThreadLocal<>();
 
-#### 3. runner file
-Override the DataProvider annotation with parallel=true in CucumberRunnerTest that extends AbstractTestNGCucumberTests class.
+#### 2. Create TestRunner File
+This runner class extends AbstractTestNGCucumberTests which has scenarios methods defined. We override the scenarios method to run it in parallel mode.
+
+```java
+    @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
+```  
+
+### Cross Browser Testing in Cucumber -
+
+#### 1. Create a testng.xml file
+
 
 ### Jenkins Integration-
 I have created Jenkinsfile using declarative pipeline syntax, where we have to option to select browser and env where we want to run our test.
@@ -38,7 +52,7 @@ We can also select CROSSBROWSER as true to run test on multiple browsers, by def
 
 # Features of the framework--
 
-#### Parallel Testing and Parameterization-
+#### Parallel Testing and Cross Browser Testing-
  testng.xml is a configuration file for organizing and executing test.We can provide different test suites and specify test classes to execute for parallel testing
  This significantly reduces execution time, improving overall efficiency and productivity in testing.
  testng.xml allows to run same test with different input data. Ex we can pass different browser and env values as parameters.
@@ -58,11 +72,11 @@ Page class will have locator to identify the elements, page specific methods and
 
 
 #### OOPS based-
-1. Framework supports Inheritance-- We have created a BasePage abstract class which defines the common methods for all the pages of the application like
- getPageTitle, getWebTableCellValue, waitUntilElementVisible etc. These methods are then reused in all the page classes. This way we are achieving inheritance.
-2. Framework supports encapsulation-- Binding the fields and methods together. In this framework for every class we have a private driver instance and public constructor to instantiate the driver instance.
-3. Framework supports Polymorphism-- Polymorphism allows us to perform same task in different ways. Click, selectDropDown are the methods in the framework that show method overloading.
-4. Framework supports Abstraction-- We have base page abstract class, which contains abstract and non-abstract methods.
+1. Framework supports Inheritance -> We have created a BasePage abstract class which defines the common methods for all the pages of the application like
+ getPageTitle, selectDropdownValue, waitUntilElementVisible etc. These methods are then reused in all the page classes. This way we are achieving inheritance.
+2. Framework supports encapsulation -> Binding the fields and methods together. For ex we have DriverManger class where we have private threadlocal variable and public getters and setters. Also in POJO class we have private variables and public getters and setters.
+3. Framework supports Polymorphism -> Polymorphism allows us to perform same task in different ways. Click, selectDropDown are the methods in the framework that show method overloading. SelectDropDown method can select a dropdown by text or by index.
+4. Framework supports Abstraction -> We have base page abstract class, which contains abstract and non-abstract methods.
 
 #### Benefits-
 1) Easy Code Maintenance- Changes to UI elements are localized within page classes, reducing test case maintenance efforts.
@@ -88,13 +102,6 @@ Proper way
 8) git push -u -f origin master
 The -f switch forces Git to overwrite any files that already exist on GitHub with your existing project’s files.
 
-# Libraries and Frameworks
-Selenium - Web automation
-Cucumber - Cucumber integration with TestNG and Selenium
-Maven - Build and package management
-TestNG - Test execution and Reporting
-Tools
-Intellij
-Eclipse
+
 
 
