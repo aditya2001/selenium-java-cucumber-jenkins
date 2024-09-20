@@ -151,6 +151,9 @@ FrameworkConstants - static final variables.
 ThreadLocal is a class in Java that allows you to create variables that can only be read and written by the same thread.
 This can be useful in situations where you have multiple threads accessing the same variable, but you want to ensure that each thread has its own isolated copy of the variable.
 
+Case study-  If you write 2 test and each opening a new URL and printing a title. If you run them parallely without using thread local variable.
+Both the threads will point to same WebDriver reference variable and getTitle for both test may result same result as both threads are pointing to same reference variable.
+
 ### Setup Project 
 Easy way-
 1) Create an empty repository on GitHub
