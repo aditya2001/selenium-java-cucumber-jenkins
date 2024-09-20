@@ -147,6 +147,9 @@ final variables -> We have FrameworkConstants class which has final variables li
 
 FrameworkConstants - static final variables.
 
+### ThreadLocal class in java-
+ThreadLocal is a class in Java that allows you to create variables that can only be read and written by the same thread.
+This can be useful in situations where you have multiple threads accessing the same variable, but you want to ensure that each thread has its own isolated copy of the variable.
 
 ### Setup Project 
 Easy way-
