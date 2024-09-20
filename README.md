@@ -8,6 +8,7 @@ I have used page object model for reusability and easy maintenance. I have used 
 4. Web Test Automation Tool - Selenium 
 5. Test Framework -> Cucumber and TestNG
 6. Design Pattern -> Page Object Model (POM)
+7. WebDriverManager is used for managing the drivers.
 
 ### Test Execution - Command line
 mvn test -DsuiteXmlFile=testng.xml
@@ -42,7 +43,16 @@ This runner class extends AbstractTestNGCucumberTests which has scenarios method
 ### Cross Browser Testing in Cucumber -
 
 #### 1. Create a testng.xml file
+testng.xml file allows to configure test suites and parameters for text execution. Suppose we want to run test on multiple browser using the same code base.
+We need to create a suite tag and within it we need to mention the test. We can have chrome test firefox test and safari test.
 
+Parameterization in Selenium refers to the process of dynamically passing parameters or input data to test methods or test scripts. This allows to execute the same test logic with different data sets, thereby enhancing test coverage, reducing redundancy, and improving maintainability.
+
+We can achieve parameterization in TestNG by 2 ways-
+
+1. Using Parameters annotation and TestNG XML file.
+   <parameter name="env" value="uat" />
+2. Using DataProvider annotation.
 
 ### Jenkins Integration-
 I have created Jenkinsfile using declarative pipeline syntax, where we have to option to select browser and env where we want to run our test.
@@ -70,6 +80,7 @@ We use maven sure fire plugin which executes testng.xml which ultimately execute
 inside src/main.java we have created page classes for every page. We have defined variables for web elements using page factory or direct element instantiation. For using the methods of these classes we need to created objects and call those methods.
 Page class will have locator to identify the elements, page specific methods and a constructor to initialize the page class variables.
 
+In Page object model, a class is created for every webpage where all elements and relevant methods of respective webpage is stored.This way it helps in separating the page objects from the test and helps in easy maintenance of tests.
 
 #### OOPS based-
 1. Framework supports Inheritance -> We have created a BasePage abstract class which defines the common methods for all the pages of the application like
