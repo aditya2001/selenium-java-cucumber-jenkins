@@ -15,7 +15,7 @@ public final class PropertyUtils {
     private PropertyUtils(){
     }
     private static Properties property= new Properties();
-    private static final Map<String, String> CONFIGMAP= new HashMap<>();
+    private static Map<String, String> CONFIGMAP= new HashMap<>();
     private static String environment = null;
     private static String browserType = null;
 
