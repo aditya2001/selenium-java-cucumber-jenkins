@@ -1,4 +1,4 @@
-# Test Automation with Java and Selenium
+## Test Automation with Java and Selenium
 This web test automation framework is built using Selenium with Java and Cucumber. I have used BDD framework to write our feature file using Jherkin language.
 I have used page object model for reusability and easy maintenance. I have used Maven for build and maintain all project dependencies and plugins.
 
@@ -54,13 +54,47 @@ We can achieve parameterization in TestNG by 2 ways-
    <parameter name="env" value="uat" />
 2. Using DataProvider annotation.
 
+### Data Provider 
+
+Data provider is an annotation in testng to pass multiple set of test data to the methods.
+
+@DataProvider(parallel = true)
+
+```java
+public class Test {
+ @DataProvider (name = "DataContainer")
+ public Object[][] myDataProvider(){
+     Object data[][] = new Object[2][3];
+     data[0][0] = 2;
+     data[0][1] = 3;
+     data[0][2] = 5;
+     
+     data[1][0] = 5;
+     data[1][1] = 7;
+     data[1][2] = 9;
+     return data;
+  // Object data[][] = {{2, 3 , 5}, {5, 7, 9}};   
+  // return data; 
+  //  We basically create a 2-dimensional matrix array containing rows and columns.
+ }
+
+ @Test (dataProvider = "DataContainer")
+ public void calculate (int a, int b, int result) {
+  int sum = a + b;
+  Assert.assertEquals(result, sum);
+ }
+}
+```
+
+A data provider method has a return type as 2D array.
+
 ### Jenkins Integration-
 I have created Jenkinsfile using declarative pipeline syntax, where we have to option to select browser and env where we want to run our test.
 We can also select CROSSBROWSER as true to run test on multiple browsers, by default it will run with cross browser as false.
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
-# Features of the framework--
+### Features of the framework--
 
 #### Parallel Testing and Cross Browser Testing-
  testng.xml is a configuration file for organizing and executing test.We can provide different test suites and specify test classes to execute for parallel testing
@@ -84,9 +118,13 @@ In Page object model, a class is created for every webpage where all elements an
 
 #### OOPS based-
 1. Framework supports Inheritance -> We have created a BasePage abstract class which defines the common methods for all the pages of the application like
- getPageTitle, selectDropdownValue, waitUntilElementVisible etc. These methods are then reused in all the page classes. This way we are achieving inheritance.
+ getPageTitle, selectDropdownValue, waitUntilElementVisible etc. These methods are then reused in all the page classes. This way we are achieving inheritance. This promotes reusability.
+For Ex -If we don't write these common methods at parent class, then we would have to write select statement and exception handling multiple times.
+
 2. Framework supports encapsulation -> Binding the fields and methods together. For ex we have DriverManger class where we have private threadlocal variable and public getters and setters. Also in POJO class we have private variables and public getters and setters.
+
 3. Framework supports Polymorphism -> Polymorphism allows us to perform same task in different ways. Click, selectDropDown are the methods in the framework that show method overloading. SelectDropDown method can select a dropdown by text or by index.
+
 4. Framework supports Abstraction -> We have base page abstract class, which contains abstract and non-abstract methods.
 
 #### Benefits-
@@ -94,7 +132,23 @@ In Page object model, a class is created for every webpage where all elements an
 2) Reusability- Page class objects are reused across multiple test cases , therefore reducing code duplication
 3) Better Readability- Test are more focussed on business logic, making them easier to understand and review.
 
-# Setup Project 
+
+### Usage of map, list in the automation framework ?
+
+
+### Usage of static, final in the framework ?
+Static is a keyword used with blocks, variables and methods.Static belongs to class instead of the object. Static is mainly used for memory management.
+In this automation framework, we have PropertyUtils class which has static members and static methods, because the value of static members like url, username, password will be same for entire execution of the program. Also, this is a final class because we don't require to extend this class.
+
+PropertyUtils class - static members and methods and a final class.
+
+Final is a keyword used for variables, methods and class.When a class in final, it cannot be inherited. Method cannot be overridden and variable cannot be modified.
+final variables -> We have FrameworkConstants class which has final variables like resource path, config file path and all.
+
+FrameworkConstants - static final variables.
+
+
+### Setup Project 
 Easy way-
 1) Create an empty repository on GitHub
 2) Use git clone to clone the repository on local
