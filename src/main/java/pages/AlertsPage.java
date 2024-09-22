@@ -9,27 +9,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 
 //import utils.BaseDriverClass;
 //https://testsigma.com/blog/page-object-model-in-selenium/
 
-public class ActionsPage extends BasePage {
+public class AlertsPage extends BasePage {
 	private WebDriver driver;
 	private String parent;
 	// Locator for Email Address
-
-	@FindBy(xpath = "//a[text()='Dropdown']")
-	@CacheLookup
-	private WebElement dropDownButton;
-
-	@FindBy(xpath = "//select[@id='dropdown']")
-	@CacheLookup
-	private WebElement selectDropDown;
-
 
 	@FindBy(xpath = "//a[text()='JavaScript Alerts']")
 	@CacheLookup
@@ -47,19 +36,13 @@ public class ActionsPage extends BasePage {
 	@CacheLookup
 	private WebElement closeButton;
 
-	public ActionsPage(WebDriver driver, WebDriverWait wait) {
+	public AlertsPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickOn() throws Exception {
-		click(dropDownButton);
-	}
 
-	public void selectDropDownValue(String value) throws Exception {
-		selectDropDown(selectDropDown, value);
-	}
 
 	public void clickAlertPopUp() throws Exception {
 		click(alertButton);
@@ -75,34 +58,5 @@ public class ActionsPage extends BasePage {
 		click(AddPopUp);
 	}
 
-	public void closeWindowAddPopUp() throws Exception {
-		click(closeButton);
-	}
-
-	public void clickWindowButton() {
-		driver.findElement(By.xpath("//a[text()='Multiple Windows']")).click();
-
-
-	}
-
-	public void validateNewWindow(){
-		driver.findElement(By.xpath("//a[text()='Click Here']")).click();
-		parent = driver.getWindowHandle();
-		Set<String> s = driver.getWindowHandles();
-		for (String childWindow : s) {
-			if (!parent.equals(childWindow)) {
-				driver.switchTo().window(childWindow);
-				System.out.println(driver.getTitle());
-				System.out.println(driver.getTitle());
-				System.out.println(driver.getTitle());
-				System.out.println(driver.getTitle());
-				driver.close();
-			}
-		}
-	}
-
-	public void navigateBackToMainWindow() {
-		driver.switchTo().window(parent);
-	}
 }
 

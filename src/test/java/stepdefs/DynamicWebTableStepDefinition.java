@@ -7,22 +7,22 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.DynamicPage;
+import pages.DynamicWebTablePage;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DynamicTableStepDefinition {
+public class DynamicWebTableStepDefinition {
 	private WebDriver driver;
 	private WebDriverWait wait;
 
-	private DynamicPage dynamicPage;
+	private DynamicWebTablePage dynamicPage;
 
-	public DynamicTableStepDefinition() throws Exception {
+	public DynamicWebTableStepDefinition() throws Exception {
 		driver = DriverManager.getInstance();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		dynamicPage = new DynamicPage(driver, wait);
+		dynamicPage = new DynamicWebTablePage(driver, wait);
 
 	}
 
