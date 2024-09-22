@@ -12,7 +12,8 @@ import org.testng.annotations.Parameters;
         tags = "not @ignore",
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "timeline:test-output-thread/"
+                "timeline:test-output-thread/",
+                "rerun:target/failedrerun.txt"
         },
         monochrome = true,
         glue = { "stepdefs" },

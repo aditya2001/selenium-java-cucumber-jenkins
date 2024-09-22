@@ -154,6 +154,22 @@ This can be useful in situations where you have multiple threads accessing the s
 Case study-  If you write 2 test and each opening a new URL and printing a title. If you run them parallely without using thread local variable.
 Both the threads will point to same WebDriver reference variable and getTitle for both test may result same result as both threads are pointing to same reference variable.
 
+
+### Retry failed test cases 
+To utilize the rerun plugin, configure the Cucumber runner with the appropriate plugin option
+
+plugin = {"rerun:target/failedrerun.txt
+
+In this example, we’ve configured the plugin option with "rerun:target/failedrerun.txt". This tells Cucumber to write information about failed scenarios to the failedrerun.txt file in the target directory.
+
+#### Rerunning Failed Scenarios
+To rerun the failed scenarios, create another test runner specifically for reruns:
+
+features = "@target/failedrerun.txt",
+
+In this runner, we’ve specified features = "@target/failedrerun.txt", which instructs Cucumber to run the scenarios listed in the failedrerun.txt file. Cucumber will now rerun only the failed scenarios from the previous test run.
+
+
 ### Setup Project 
 Easy way-
 1) Create an empty repository on GitHub

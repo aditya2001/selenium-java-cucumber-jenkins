@@ -9,4 +9,11 @@
             <class name="runner.TestRunner"></class>
          </classes>
     </test> <!-- Test -->
+    <test name="Rerun failed tests">
+        <parameter name="browser" value="chrome" />
+        <parameter name="env" value="uat" />
+        <classes>
+            <class name="runner.FailedTestRunner"></class>
+        </classes>
+    </test> <!-- Test -->
 </suite> <!-- Suite -->
