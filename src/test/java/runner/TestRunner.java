@@ -1,5 +1,7 @@
 package runner;
 
+import org.testng.annotations.BeforeClass;
+import params.GlobalParams;
 import utils.PropertyUtils;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -23,10 +25,11 @@ import org.testng.annotations.Parameters;
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 
-    @BeforeTest
+    @BeforeClass
     @Parameters({"browser","env"})
     public void beforeRun(String browser, String env) throws Throwable {
-        PropertyUtils.setBrowserType(browser);
+        GlobalParams.setBrowserType(browser);
+//        GlobalParams.setBrowserName(browser);
         PropertyUtils.setEnv(env);
 
     }

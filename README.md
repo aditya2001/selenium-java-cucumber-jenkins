@@ -86,7 +86,29 @@ public class Test {
 }
 ```
 
-A data provider method has a return type as 2D array.
+A data provider method has a return type as 2D array because we get test data in forms of rows and columns so that we need 2D object.
+
+A two-dimensional array (or 2D array in Java) is a linear data structure that is used to store data in tabular format.
+
+![img_3.png](img_3.png)
+
+Hence, in Java, a two-dimensional array is a collection of pointers, where each pointer refers to a one-dimensional array that represents a particular row of the 2D array.
+
+//Declaring 2D array
+int[][] a;
+
+//Creating a 2D array
+a = new int[3][3];
+
+```java
+int[][] oddNumbers = { {1, 3, 5, 7}, {9, 11, 13, 15}, {17, 19, 21, 23} };
+
+for(int i = 0; i < oddNumbers.length; i++){
+  for(int j = 0; j < oddNumbers[i].length; j++){
+   System.out.println(oddNumbers[i][j]);
+ }   
+}
+```
 
 ### Jenkins Integration-
 I have created Jenkinsfile using declarative pipeline syntax, where we have to option to select browser and env where we want to run our test.
@@ -133,6 +155,11 @@ For Ex -If we don't write these common methods at parent class, then we would ha
 3) Better Readability- Test are more focussed on business logic, making them easier to understand and review.
 
 
+### Why Page object ?
+In our framework for every class we have a private instance driver variable. If we make its value static then its value will point to specific driver object and if there is a scenario of running login test on multiple browsers will not be possible.
+Right now we can create a page object by passing dynamic driver objects and test run will on multiple browsers.
+
+
 ### Usage of map, list in the automation framework ?
 
 
@@ -169,6 +196,71 @@ features = "@target/failedrerun.txt",
 
 In this runner, we’ve specified features = "@target/failedrerun.txt", which instructs Cucumber to run the scenarios listed in the failedrerun.txt file. Cucumber will now rerun only the failed scenarios from the previous test run.
 
+
+### How to Execute Failed Test Cases in TestNG?
+There are two ways to perform a failed test in TestNG:
+
+1. Using the testng-failed.xml file.
+![img_2.png](img_2.png)
+
+Run this testng-failed.xml file: Right click=> Run As => TestNG Suite. The console output is as below:
+
+2. Using the IRetryAnalyzer interface.
+
+we implement IRetryAnalyzer interface provided by TestNG. By overriding retry() method of the interface in your class, you can control the number of attempts to rerun a failed test case.
+```java
+public class RetryAnalyzer implements IRetryAnalyzer {
+    int retryAttemptsCounter = 0;
+    //Set the value to the number of times we want to retry
+    int maxRetryLimit = 3;
+    //Method to attempt retries for failure tests
+    public boolean retry(ITestResult result) {
+        if (!result.isSuccess()) {
+            if(retryAttemptsCounter < maxRetryLimit){
+                retryAttemptsCounter++;
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+@Test(retryAnalyzer = RetryAnalyzer.class)
+public void failedtest() {
+
+    System.out.println("Failed test run");
+    Assert.assertTrue(false);
+}
+```
+
+### Soft Assertions and Hard Assertions.
+There is a scenario whenever “Assert.assertEquals()” function fails automatically it has to take screenshot. How can you achieve this?
+We can override onAssert Failure method and decide what should happen.
+
+```java
+public class CustomSoftAssert extends SoftAssert {
+
+    @Override
+    public void onAssertFailure() {
+        new BasePage().takeScreenshot();
+    }
+}
+
+public static CustomSoftAssert softAssert = new CustomSoftAssert();
+softAssert.assertEquals();
+softAssert.assertAll();  -> It makes sure test fails if any of the assertions fails.
+```
+
+### Listeners in Java
+
+### What will you do if there are failures in your suite execution and what is your approach?
+While executing the automation scripts, test cases may fail for several reasons. To optimize our next runs, we need to re-run only failed test cases. How to execute failed Test cases? What is the best approach? In TestNg class, we can easily re-run the test cases using two methods as explained below:
+
+Method 1:  By using testng-failed.xml file in test-output folder and run it directly.
+
+Method 2:  By implementing TestNG IRetryAnalyzer for pure testNG framework, you can set retry count and all here.
+
+Method 3. In cucumber framework, use plugin rerun
 
 ### Setup Project 
 Easy way-

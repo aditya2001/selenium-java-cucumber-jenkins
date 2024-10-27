@@ -17,23 +17,12 @@ public final class PropertyUtils {
     private static Properties property= new Properties();
     private static Map<String, String> CONFIGMAP= new HashMap<>();
     private static String environment = null;
-    private static String browserType = null;
 
     /**
      * This method is used to load the properties from config.properties file
      * @return it returns Properties prop object
      */
 
-
-    public static void setBrowserType(String browser) {
-        browserType = browser;
-    }
-    public static String getBrowserType() {
-        if (browserType != null)
-            return browserType;
-        else
-            throw new RuntimeException("browser not specified in the testng.xml");
-    }
 
     public static void setEnv(String env) {
         environment = env;

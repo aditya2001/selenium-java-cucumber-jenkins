@@ -9,6 +9,7 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import params.GlobalParams;
 import utils.PropertyUtils;
 
 import java.io.File;
@@ -21,8 +22,11 @@ public class Hooks {
 
     @Before(order = 0)
     public void initializeDriver() {
-        String browser = PropertyUtils.getBrowserType();
-        driver = DriverFactory.initDriver(browser);
+        String browser = GlobalParams.getBrowserType();
+ //       thread one
+//        String browser = GlobalParams.getBrowserName();
+        DriverManager.initializeDriver(browser);
+        driver = DriverManager.getInstance();
 
     }
 
