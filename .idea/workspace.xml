@@ -5,30 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759ea42f-3bba-4c82-997a-cb641134a376" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/params/GlobalParams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeleniumScreenshots/1.Select_drop_down_value.png" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumScreenshots/1.Select_drop_down_value.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeleniumScreenshots/3_Close_windows_add_popup.png" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumScreenshots/3_Close_windows_add_popup.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeleniumScreenshots/Incorrect_Username_Login.png" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumScreenshots/Incorrect_Username_Login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/drivermanager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/drivermanager/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PropertyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PropertyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefs/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefs/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/chosen.jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/chosen.jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/chosen.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/chosen.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/chosen.override.css" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/chosen.override.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/formatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/formatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/jquery-3.5.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/jquery-3.5.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/report.css" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/report.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/vis.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/vis.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output-thread/vis.override.css" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/vis.override.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/SparkReport/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/SparkReport/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +45,7 @@
     &quot;TestNG.C:/Users/HP/workspace/selenium-java-cucumber-jenkins/target/surefire-reports/testng-failed.xml.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/workspace/selenium-java-cucumber-parallel&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/workspace/appium-java-cucumber-jenkins&quot;
   }
 }</component>
   <component name="RecentsManager">

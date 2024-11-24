@@ -40,6 +40,10 @@ This runner class extends AbstractTestNGCucumberTests which has scenarios method
     }
 ```  
 
+#### 3. In testNG.xml file, pass parallel attribute 
+
+<suite name="Test Suite" parallel="classes">
+
 ### Cross Browser Testing in Cucumber -
 
 #### 1. Create a testng.xml file
@@ -52,6 +56,18 @@ We can achieve parameterization in TestNG by 2 ways-
 
 1. Using Parameters annotation and TestNG XML file.
    <parameter name="env" value="uat" />
+   public class TestRunner extends AbstractTestNGCucumberTests {
+
+```java
+    @BeforeClass
+    @Parameters({"browser","env"})
+    public void beforeRun(String browser, String env) throws Throwable {
+        GlobalParams.setBrowserType(browser);
+//        GlobalParams.setBrowserName(browser);
+PropertyUtils.setEnv(env);
+    }
+ ```
+
 2. Using DataProvider annotation.
 
 ### Data Provider 
