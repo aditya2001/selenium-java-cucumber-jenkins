@@ -39,7 +39,7 @@ public class AlertsPage extends BasePage {
 	public AlertsPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+//		PageFactory.initElements(driver, this);
 	}
 
 

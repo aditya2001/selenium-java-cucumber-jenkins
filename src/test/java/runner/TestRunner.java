@@ -28,7 +28,8 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
     @Parameters({"browser","env"})
     public void beforeRun(String browser, String env) throws Throwable {
-        GlobalParams.setBrowserType(browser);
+        GlobalParams.setBrowserName(browser);
+        GlobalParams.setEnvironmentName(env);
 //        GlobalParams.setBrowserName(browser);
         PropertyUtils.setEnv(env);
 

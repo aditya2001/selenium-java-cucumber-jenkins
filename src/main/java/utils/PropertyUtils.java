@@ -34,25 +34,12 @@ public final class PropertyUtils {
             throw new RuntimeException("env not specified in the testng.xml");
     }
 
-//    public static void initializeProp() {
-//
-//        prop = new Properties();
-//        try {
-//            FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-//            prop.load(ip);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
 
-    static {
+    public static void initializeProperties(String env) {
         //try with resources
         try {
-            FileInputStream file = new FileInputStream(FrameworkConstants.getConfigFilePath());
-
-            property.load(file);
+                FileInputStream file = new FileInputStream(FrameworkConstants.getConfigPath() + env + FrameworkConstants.getConfigFile());
+                property.load(file);
 
             for (Map.Entry<Object, Object> entry : property.entrySet()) {
                 CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()).trim()); //remove the trailing and leading spaces

@@ -24,7 +24,7 @@ public class DynamicWebTablePage extends BasePage {
 	public DynamicWebTablePage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+//		PageFactory.initElements(driver, this);
 	}
 
 	public List<String> getColumnNames() throws Exception {

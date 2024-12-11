@@ -29,7 +29,7 @@ public class LoginPage extends BasePage {
 
 	public LoginPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
-		PageFactory.initElements(driver, this);
+//		PageFactory.initElements(driver, this);
 	}
 
 	public void loginToSite(String username, String password) {

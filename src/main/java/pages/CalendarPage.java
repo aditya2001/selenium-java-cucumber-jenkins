@@ -53,7 +53,7 @@ public class CalendarPage extends BasePage {
 	public CalendarPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+//		PageFactory.initElements(driver, this);
 	}
 
 	public void clickCalenderButton() throws Exception {

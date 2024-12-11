@@ -1,6 +1,5 @@
 package stepdefs;
 
-import driverfactory.DriverFactory;
 import drivermanager.DriverManager;
 import org.apache.commons.io.FileUtils;
 import io.cucumber.java.After;
@@ -17,24 +16,23 @@ import java.io.IOException;
 
 public class Hooks {
 
-    private DriverFactory driverFactory;
     private WebDriver driver;
 
     @Before(order = 0)
     public void initializeDriver() {
-        String browser = GlobalParams.getBrowserType();
- //       thread one
-//        String browser = GlobalParams.getBrowserName();
+        String browser = GlobalParams.getBrowserName();
+        String env = GlobalParams.getEnvironmentName();
         DriverManager.initializeDriver(browser);
         driver = DriverManager.getInstance();
+        PropertyUtils.initializeProperties(env);
 
     }
 
-    @After(order = 0)
-    public void quitBrowser() {
-        driver.quit();
-        DriverManager.unload();
-    }
+//    @After(order = 0)
+//    public void quitBrowser() {
+//        driver.quit();
+//        DriverManager.unload();
+//    }
 
     @After(order = 1)
     public void tearDown(Scenario scenario) throws IOException {

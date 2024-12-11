@@ -30,7 +30,6 @@ public final class DriverManager {
 
     public static void initializeDriver(String browser) {
 
-        System.out.println("Please pass the correct browser value: " );
         WebDriver driver = null;
 //        System.out.println("browser value is: " + browser);
 

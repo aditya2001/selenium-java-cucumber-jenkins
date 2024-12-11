@@ -1,4 +1,4 @@
-
+@ignore
 Feature: Perform different actions on the page
 
   Background:

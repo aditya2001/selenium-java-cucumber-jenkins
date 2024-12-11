@@ -5,10 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759ea42f-3bba-4c82-997a-cb641134a376" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/config/uat/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeleniumScreenshots/1.Select_drop_down_value.png" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumScreenshots/1.Select_drop_down_value.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeleniumScreenshots/1._Close_windows_add_popup.png" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumScreenshots/1._Close_windows_add_popup.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/driverfactory/DriverFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/drivermanager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/drivermanager/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AlertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AlertsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DynamicWebTablePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DynamicWebTablePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SelectDropDownPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SelectDropDownPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WindowsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WindowsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/params/GlobalParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/params/GlobalParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PropertyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PropertyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefs/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefs/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/config/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config/int/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/DynamicWebTable.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/DynamicWebTable.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/LoginPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/LoginPage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/SelectDropDown.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/SelectDropDown.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Windows.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Windows.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output-thread/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/SparkReport/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/SparkReport/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,20 +65,22 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;TestNG.C:/Users/HP/workspace/selenium-java-cucumber-jenkins/target/surefire-reports/testng-failed.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.C:/Users/adity/workspace/selenium-java-cucumber/testng.xml.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/workspace/appium-java-cucumber-jenkins&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/workspace/selenium-java-cucumber-jenkins/src/test/resources/config/int&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\workspace\selenium-java-cucumber-jenkins\src\test\resources\config\int" />
       <recent name="C:\Users\HP\workspace\selenium-java-cucumber-jenkins\src\test\resources\features" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\test\resources\features" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\main\java\pages" />
-      <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\test\java\stepdefs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\workspace\selenium-java-cucumber-jenkins\src\test\resources\config\uat" />
       <recent name="C:\Users\adity\workspace\selenium-java-cucumber\src\test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -67,7 +91,7 @@
       <recent name="runners" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/HP/workspace/selenium-java-cucumber-jenkins/target/surefire-reports/testng-failed.xml">
+  <component name="RunManager" selected="TestNG.C:/Users/adity/workspace/selenium-java-cucumber/testng.xml">
     <configuration name="Feature: DynmicWebPage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/DynmicWebPage.feature" />
@@ -136,10 +160,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/adity/workspace/selenium-java-cucumber/testng.xml" />
         <item itemvalue="TestNG.C:/Users/HP/workspace/selenium-java-cucumber-jenkins/target/surefire-reports/testng-failed.xml" />
         <item itemvalue="TestNG.C:/Users/adity/workspace/selenium-java-cucumber/parallel-testng.xml" />
         <item itemvalue="Cucumber Java.Feature: DynmicWebPage" />
-        <item itemvalue="TestNG.C:/Users/adity/workspace/selenium-java-cucumber/testng.xml" />
         <item itemvalue="Cucumber Java.Feature: LoginPage" />
       </list>
     </recent_temporary>
@@ -168,16 +192,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/drivermanager/DriverManager.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

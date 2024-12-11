@@ -47,7 +47,7 @@ public class WindowsPage extends BasePage {
 	public WindowsPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+//		PageFactory.initElements(driver, this);
 	}
 
 	public void clickOn() throws Exception {

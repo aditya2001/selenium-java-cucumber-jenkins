@@ -8,14 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import utils.BaseDriverClass;
 
-public class HomePage{
+public class HomePage extends BasePage{
 
 	@FindBy(xpath = "//span[contains(text(),'Products')]")
 	@CacheLookup
 	private WebElement homepageHeader;
 
 	public HomePage(WebDriver driver, WebDriverWait wait) {
-//		super(driver, wait);
+		super(driver, wait);
 		PageFactory.initElements(driver, this);
 	}
 

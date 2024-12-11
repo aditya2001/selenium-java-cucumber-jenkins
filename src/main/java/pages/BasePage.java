@@ -3,7 +3,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +14,7 @@ public abstract class BasePage {
 	public BasePage(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
 		this.wait = wait;
+		PageFactory.initElements(driver, this);
 	}
 
 	protected void waitUntilElementVisible(WebElement element) {

@@ -1,4 +1,4 @@
-@ignore
+
 Feature: Login page will work depending on the user credentials.
 
   Background:
@@ -11,7 +11,14 @@ Feature: Login page will work depending on the user credentials.
 #    Then The error message "Epic sadface: Sorry, this user has been locked out." is displayed
 
 
-  Scenario: Incorrect Username Login
+  Scenario: 1. Incorrect Username Login
+    When A user provides incorrect credentials, and clicks on the login button with
+      | userName | password     |
+      | testName | secret_sauce |
+#    Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
+
+
+  Scenario: 2. Incorrect Username Login
     When A user provides incorrect credentials, and clicks on the login button with
       | userName | password     |
       | testName | secret_sauce |
