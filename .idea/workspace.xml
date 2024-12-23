@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="759ea42f-3bba-4c82-997a-cb641134a376" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/config/uat/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeleniumScreenshots/1.Select_drop_down_value.png" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumScreenshots/1.Select_drop_down_value.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeleniumScreenshots/1._Close_windows_add_popup.png" beforeDir="false" afterPath="$PROJECT_DIR$/SeleniumScreenshots/1._Close_windows_add_popup.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/constants/FrameworkConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/driverfactory/DriverFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/drivermanager/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/drivermanager/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/AlertsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/AlertsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/CalendarPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/DynamicWebTablePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/DynamicWebTablePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SelectDropDownPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SelectDropDownPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/WindowsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/WindowsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/params/GlobalParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/params/GlobalParams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PropertyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PropertyUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepdefs/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepdefs/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/config/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config/int/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/DynamicWebTable.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/DynamicWebTable.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/LoginPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/LoginPage.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/SelectDropDown.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/SelectDropDown.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Windows.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Windows.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output-thread/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/test-output-thread/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/SparkReport/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/SparkReport/Index.html" afterDir="false" />
     </list>
@@ -68,7 +46,7 @@
     &quot;TestNG.C:/Users/adity/workspace/selenium-java-cucumber/testng.xml.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/workspace/selenium-java-cucumber-jenkins/src/test/resources/config/int&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/workspace/playwright-java-cucumber-old&quot;
   }
 }</component>
   <component name="RecentsManager">

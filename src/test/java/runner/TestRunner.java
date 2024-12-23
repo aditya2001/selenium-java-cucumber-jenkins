@@ -30,9 +30,6 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     public void beforeRun(String browser, String env) throws Throwable {
         GlobalParams.setBrowserName(browser);
         GlobalParams.setEnvironmentName(env);
-//        GlobalParams.setBrowserName(browser);
-        PropertyUtils.setEnv(env);
-
     }
 
     @Override
