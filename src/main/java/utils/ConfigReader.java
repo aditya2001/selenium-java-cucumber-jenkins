@@ -11,8 +11,8 @@ import exceptions.PropertyFileException;
 import enums.ConfigProperties;
 
 
-public final class PropertyUtils {
-    private PropertyUtils(){
+public final class ConfigReader {
+    private ConfigReader(){
     }
     private static Properties property= new Properties();
     private static Map<String, String> CONFIGMAP= new HashMap<>();
@@ -35,7 +35,7 @@ public final class PropertyUtils {
     }
 
 
-    public static void initializeProperties(String env) {
+    public static void initializeConfigMap(String env) {
         //try with resources
         try {
                 FileInputStream file = new FileInputStream(FrameworkConstants.getConfigPath() + env + FrameworkConstants.getConfigFile());

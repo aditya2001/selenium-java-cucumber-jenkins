@@ -9,7 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import params.GlobalParams;
-import utils.PropertyUtils;
+import utils.ConfigReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class Hooks {
         String env = GlobalParams.getEnvironmentName();
         DriverManager.initializeDriver(browser);
         driver = DriverManager.getInstance();
-        PropertyUtils.initializeProperties(env);
+        ConfigReader.initializeConfigMap(env);
 
     }
 

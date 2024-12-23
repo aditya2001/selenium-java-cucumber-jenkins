@@ -2,7 +2,6 @@ package runner;
 
 import org.testng.annotations.BeforeClass;
 import params.GlobalParams;
-import utils.PropertyUtils;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeTest;

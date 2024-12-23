@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.PropertyUtils;
+import utils.ConfigReader;
 
 import java.time.Duration;
 import java.util.List;
@@ -31,7 +31,7 @@ public class LoginDefinition {
 	@Given("^A web browser is at the sauce labs login page$")
 	public void loginPage() {
 //		if(ConfigReader.getProp().get("uatUrl").equals('uat')){
-		driver.get(PropertyUtils.get(ConfigProperties.URL));
+		driver.get(ConfigReader.get(ConfigProperties.URL));
 //		}
 
 		Assert.assertTrue(loginPage.verifyOnLoginPage());

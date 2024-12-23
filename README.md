@@ -64,7 +64,6 @@ We can achieve parameterization in TestNG by 2 ways-
     public void beforeRun(String browser, String env) throws Throwable {
         GlobalParams.setBrowserType(browser);
 //        GlobalParams.setBrowserName(browser);
-PropertyUtils.setEnv(env);
     }
  ```
 
@@ -181,9 +180,9 @@ Right now we can create a page object by passing dynamic driver objects and test
 
 ### Usage of static, final in the framework ?
 Static is a keyword used with blocks, variables and methods.Static belongs to class instead of the object. Static is mainly used for memory management.
-In this automation framework, we have PropertyUtils class which has static members and static methods, because the value of static members like url, username, password will be same for entire execution of the program. Also, this is a final class because we don't require to extend this class.
+In this automation framework, we have ConfigReader class which has static members and static methods, because the value of static members like url, username, password will be same for entire execution of the program. Also, this is a final class because we don't require to extend this class.
 
-PropertyUtils class - static members and methods and a final class.
+ConfigReader class - static members and methods and a final class.
 
 Final is a keyword used for variables, methods and class.When a class in final, it cannot be inherited. Method cannot be overridden and variable cannot be modified.
 final variables -> We have FrameworkConstants class which has final variables like resource path, config file path and all.
