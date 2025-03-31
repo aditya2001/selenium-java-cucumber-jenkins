@@ -277,6 +277,24 @@ Method 2:  By implementing TestNG IRetryAnalyzer for pure testNG framework, you 
 
 Method 3. In cucumber framework, use plugin rerun
 
+
+### Framework components
+
+#### Within src/main Java we have different classes. Like
+1. Page classes - Inside page classes we have locators, page methods and a constructor to initialize the private driver variable.
+2. DriverManager class - This is a final class as we don't need to extend it. This class has static methods like initializeDriver, getInstance and static variables like tlDriver and can be used directly, because per thread we just want one object.
+3. FrameConstants - All framework constants variables are final.
+4. Utils - We have a ConfigReader class which is a final class with static variables and methods.
+5. Enums -
+6. Exceptions -
+
+#### Within src/test java
+1. Runner file
+2. StepDefinitions
+3. resources folder contains feature files.
+
+
+
 ### Setup Project 
 Easy way-
 1) Create an empty repository on GitHub
@@ -298,4 +316,4 @@ The -f switch forces Git to overwrite any files that already exist on GitHub wit
 
 
 
-
+   
