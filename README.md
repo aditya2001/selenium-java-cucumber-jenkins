@@ -267,6 +267,7 @@ softAssert.assertAll();  -> It makes sure test fails if any of the assertions fa
 ```
 
 ### Listeners in Java
+TestNG listeners are the piece of code that listens to the events occurring in the TestNG.
 
 ### What will you do if there are failures in your suite execution and what is your approach?
 While executing the automation scripts, test cases may fail for several reasons. To optimize our next runs, we need to re-run only failed test cases. How to execute failed Test cases? What is the best approach? In TestNg class, we can easily re-run the test cases using two methods as explained below:
